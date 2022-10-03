@@ -1,5 +1,5 @@
 # ML 7641: Team 21
-## Project Title: MultiModel Sarcasm Detection
+## Project Title: Multi-Model Sarcasm Detection
 
 ### Introduction:
 Sarcasm detection is a task under sentiment analysis that involves recognizing sarcastic utterances whose perlocutionary effect requires a great understanding of the conversational context, the utterance, and some basic knowledge to perceive the whole conversation. However, the ironic and metaphorical nature of sarcasm poses a challenge for computer models that try to analyze the sentiment of the conversation.
