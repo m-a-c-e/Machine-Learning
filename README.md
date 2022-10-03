@@ -10,11 +10,11 @@ There have been several NLP models that have tried to detect sarcasm in text sta
 ### Dataset Description:
 MUStARD(multimodal video corpus) consists of audiovisual utterances annotated with sarcasm labels. Each utterance is accompanied by its context, which offers more details about the situation in which the utterance takes place. The dataset consists of 345 sarcastic videos and 6,020 non-sarcastic videos. The dataset is compiled from popular TV shows like Friends, The Golden Girls, The Big Bang Theory, and Sarcasmaholics Anonymous. 
 
-<!---
+
 ![sample_datapoint.jpg](./Images/sample_datapoint.PNG) 
 |:--:| 
 | **Utterance and Context Video sequences: Text and Audio-visual components** |
---->
+
 
 Sample DataPoint: 
 - Video Sequence for Utterance
@@ -23,11 +23,10 @@ Sample DataPoint:
 - Speaker Name and Context character names
 - Label (Sarcastic or not)
 
-<!---
+
 ![sample_json.jpg](./Images/sample_json.PNG) 
 |:--:| 
 | **Example of a JSON file that contains all information about the video sequences for a datapoint** |
---->
 
 ### Methods:
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text. The feature vector is generated as follows:
