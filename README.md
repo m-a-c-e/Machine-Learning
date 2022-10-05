@@ -43,7 +43,7 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 
 ### Methods:
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text.
-- **Video**: CNNs like ImageNet, ResNet, etc. 
+- **Video**: CNNs like VGG, ImageNet, ResNet, etc. 
 - **Audio**:  RNN models like Vanilla RNN and Librosa library [6] (MFCC, melspectogram, spectral centroid). 
 - **Text**: RNN models like LSTM and Transformers like BERT[1]. <br/>
 
