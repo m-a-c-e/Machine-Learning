@@ -37,7 +37,7 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 * K-Mean Clustering
 * Gaussian Mixture Model
 
-![data_flowchart.jpg](./Images/data_flowchart.PNG) 
+![data_flowchart.jpg](./Images/data_flowchart.png) 
 |:--:| 
 | **Feature Extraction and Data Analysis Flowchart** |
 
