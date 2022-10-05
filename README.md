@@ -22,14 +22,12 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 
 ### Methods:
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text.
-- Video: CNNs like ImageNet, ResNet, etc. 
-- Audio:  RNN models like Vanilla RNN and Librosa library (MFCC, melspectogram, spectral centroid). 
-- Text: RNN models like LSTM and Transformers like BERT. [4]
-The feature vectors of the 3 modalities will be combined and given as input to the supervised or unsupervised Machine Learning models. 
+- **Video**: CNNs like ImageNet, ResNet, etc. 
+- **Audio**:  RNN models like Vanilla RNN and Librosa library [6] (MFCC, melspectogram, spectral centroid). 
+- **Text**: RNN models like LSTM and Transformers like BERT[1]. <br/>
 
-![data_flowchart.jpg](./Images/data_flowchart.png) 
-|:--:| 
-| **Feature Extraction and Data Analysis Flowchart** |
+
+The feature vectors of the 3 modalities will be combined and given as input to the supervised or unsupervised Machine Learning models. 
 
 **Supervised methods:**
 * Logistic Regression
@@ -40,6 +38,11 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 **Unsupervised Methods:**
 * K-Mean Clustering
 * Gaussian Mixture Model
+
+![data_flowchart.jpg](./Images/data_flowchart.png) 
+|:--:| 
+| **Feature Extraction and Data Analysis Flowchart** |
+
 
 ### Potential Results and Discussion:
 The goal of this project is to classify if a video is sarcastic or not given its audio, video and captions. The classifier model will output probability of a datapoint being sarcastic. The clustering models will distinguish between sarcastic and non-sarcastic content. Since the dataset is imbalanced, metrics like Precision, Recall, F1-Score, ROC-AUC score will be used to evaluate the Supervised Learning models. The clustering algorithms will be evaluated using Silhouette Coefficient.
