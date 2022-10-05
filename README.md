@@ -37,6 +37,10 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 * K-Mean Clustering
 * Gaussian Mixture Model
 
+![data_flowchart.jpg](./Images/data_flowchart.PNG) 
+|:--:| 
+| **Feature Extraction and Data Analysis Flowchart** |
+
 ### Potential Results and Discussion:
 The goal of this project is to classify if a video is sarcastic or not given its audio, video and captions. The classifier model will output probability of a datapoint being sarcastic. The clustering models will distinguish between sarcastic and non-sarcastic content. Since the dataset is imbalanced, metrics like Precision, Recall, F1-Score, ROC-AUC score will be used to evaluate the Supervised Learning models. The clustering algorithms will be evaluated using Silhouette Coefficient.
 Furthermore, the interpretability of the model will also be analyzed using AI Explainability tools.
