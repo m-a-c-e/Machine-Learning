@@ -17,7 +17,7 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 - Transcripts of the Videos
 - Speaker Name and Context character names
 - Label (Sarcastic or not)
---->
+
 
 ![sample_datapoint.jpg](./Images/sample_datapoint.PNG) 
 |:--:| 
@@ -26,6 +26,20 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 ![sample_json.jpg](./Images/sample_json.PNG) 
 |:--:| 
 | **Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: [6])** |
+--->
+
+
+<p align="center">
+<img src="./Images/sample_datapoint.PNG" style="border: 1px solid black" >
+<figcaption align="middle">Utterance and Context Video sequences: Text and Audio-visual components (Credit: [6])<figcaption/>
+<p/>
+
+
+<p align="center">
+<img src="./Images/sample_json.PNG" style="border: 1px solid black" >
+<figcaption align="middle">Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: [6])<figcaption/>
+<p/>
+
 
 ### Methods:
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text.
@@ -46,15 +60,16 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 * K-Mean Clustering
 * Gaussian Mixture Model
 
+<!---
 ![data_flowchart.jpg](./Images/data_flowchart.png) 
 |:--:| 
 | **Feature Extraction and Data Analysis Flowchart** |
+--->
 
 <p align="center">
-<img src="./Images/data_flowchart.png">
-<figcaption align="middle">LLL<figcaption/>
+<img src="./Images/data_flowchart.png" style="border: 1px solid black" >
+<figcaption align="middle">Feature Extraction and Data Analysis Flowchart<figcaption/>
 <p/>
-<center>This is an image</center>
 
 
 ### Potential Results and Discussion:
