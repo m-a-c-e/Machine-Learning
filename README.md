@@ -44,3 +44,9 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 ### Potential Results and Discussion:
 The goal of this project is to classify if a video is sarcastic or not given its audio, video and captions. The classifier model will output probability of a datapoint being sarcastic. The clustering models will distinguish between sarcastic and non-sarcastic content. Since the dataset is imbalanced, metrics like Precision, Recall, F1-Score, ROC-AUC score will be used to evaluate the Supervised Learning models. The clustering algorithms will be evaluated using Silhouette Coefficient.
 Furthermore, the interpretability of the model will also be analyzed using AI Explainability tools.
+
+### References:
+[1] Majumder, Navonil, et al. "Dialoguernn: An attentive rnn for emotion detection in conversations." Proceedings of the AAAI conference on artificial intelligence. Vol. 33. No. 01. 2019. [Link](https://arxiv.org/pdf/1811.00405.pdf)
+[2] Byron C. Wallace, Do Kook Choe, Laura Kertz, and Eugene Charniak. 2014. "Humans Require Context to Infer Ironic Intent (so Computers Probably do, too)". In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 512–516, Baltimore, Maryland. Association for Computational Linguistics. [Link](https://aclanthology.org/P14-2084)
+[3] Yaghoobian, Hamed, Hamid R. Arabnia, and Khaled Rasheed. "Sarcasm detection: A comparative study." arXiv preprint arXiv:2107.02276 (2021). [Link](https://arxiv.org/pdf/2107.02276.pdf)
+[4] Lydia Xu, Vera Xu. "Project Report: Sarcasm Detection" [Link](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf)
