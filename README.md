@@ -77,7 +77,7 @@ The goal of this project is to classify if a video is sarcastic or not given its
 Furthermore, the interpretability of the model will also be analyzed using AI Explainability tools.
 
 ### References:
-[1] Lydia Xu, Vera Xu. "Project Report: Sarcasm Detection" [Link](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf) <br>
+<a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a> Lydia Xu, Vera Xu. "Project Report: Sarcasm Detection" <br>
 [2] Joshi, Aditya, Vinita Sharma, and Pushpak Bhattacharyya. "Harnessing context incongruity for sarcasm detection." Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 2: Short Papers). 2015. [Link](https://aclanthology.org/P15-2124.pdf) <br>
 [3] Poria, Soujanya, et al. "A deeper look into sarcastic tweets using deep convolutional neural networks." arXiv preprint arXiv:1610.08815 (2016). [Link](https://arxiv.org/pdf/1610.08815.pdf) <br>
 [4] Tepperman, Joseph, David Traum, and Shrikanth Narayanan. "" Yeah right": sarcasm recognition for spoken dialogue systems." Ninth international conference on spoken language processing. 2006. [Link](http://www1.cs.columbia.edu/~julia/papers/teppermanetal06.pdf) <br>
