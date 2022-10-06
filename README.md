@@ -5,10 +5,10 @@
 Sarcasm detection is a task under sentiment analysis that involves recognizing sarcastic utterances whose perlocutionary effect requires a great understanding of the conversational context, the utterance, and some basic knowledge to perceive the whole conversation. The ironic and metaphorical nature of sarcasm poses a challenge for computer models that try to analyze the sentiment of the conversation.
 
 ### Problem Definition:
-Several NLP models have tried to detect sarcasm in text statements using annotation <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a> or context incongruity [2]. Though these models have managed to achieve good accuracy by including context and embeddings of personality features [3], the existing models do not focus on sarcasm detection in conversation. Past work in sarcasm detection using speech is based on identifying prosodal and spectral features that corresponds to sarcastic comments [4]. Visual markers to understand sarcasm have been rarely studied. Thus, in our project, we aim to detect sarcasm in video segments of dialogues by extracting visual features, and combining it with the corresponding textual and audio cues to derive additional contextual information [5] to identify sarcastic behavior. The motivation for sarcasm detection is to improve Conversational AI’s ability to perceive human interaction, Opinion mining, Marketing research, and Information categorization. 
+Several NLP models have tried to detect sarcasm in text statements using annotation <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a> or context incongruity <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[2]</a>. Though these models have managed to achieve good accuracy by including context and embeddings of personality features [3], the existing models do not focus on sarcasm detection in conversation. Past work in sarcasm detection using speech is based on identifying prosodal and spectral features that corresponds to sarcastic comments <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[4]</a>. Visual markers to understand sarcasm have been rarely studied. Thus, in our project, we aim to detect sarcasm in video segments of dialogues by extracting visual features, and combining it with the corresponding textual and audio cues to derive additional contextual information <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[5]</a> to identify sarcastic behavior. The motivation for sarcasm detection is to improve Conversational AI’s ability to perceive human interaction, Opinion mining, Marketing research, and Information categorization. 
 
 ### Dataset Description:
-MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotated with sarcasm labels. Each utterance is accompanied by its context, which offers more details about the situation in which the utterance takes place. The dataset consists of 345 sarcastic videos and 6,020 non-sarcastic videos. The dataset is compiled from popular TV shows.
+MUStARD(multimodal video corpus) <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[6]</a> consists of audiovisual utterances annotated with sarcasm labels. Each utterance is accompanied by its context, which offers more details about the situation in which the utterance takes place. The dataset consists of 345 sarcastic videos and 6,020 non-sarcastic videos. The dataset is compiled from popular TV shows.
 
 <!---
 **Features of a Datapoint:**: 
@@ -21,31 +21,31 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 
 ![sample_datapoint.jpg](./Images/sample_datapoint.PNG) 
 |:--:| 
-| **Utterance and Context Video sequences: Text and Audio-visual components (Credit: [6])** |
+| **Utterance and Context Video sequences: Text and Audio-visual components (Credit: <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[6]</a>)** |
 
 ![sample_json.jpg](./Images/sample_json.PNG) 
 |:--:| 
-| **Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: [6])** |
+| **Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[6]</a>)** |
 --->
 
 
 <p align="center">
 <img src="./Images/sample_datapoint.PNG" style="border: 1px solid black" >
-<figcaption align="middle">Utterance and Context Video sequences: Text and Audio-visual components (Credit: [6])</figcaption>
+<figcaption align="middle">Utterance and Context Video sequences: Text and Audio-visual components (Credit: <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[6]</a>)</figcaption>
 </p>
 
 
 <p align="center">
 <img src="./Images/sample_json.PNG" style="border: 1px solid black" >
-<figcaption align="middle">Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: [6])</figcaption>
+<figcaption align="middle">Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[6]</a>)</figcaption>
 </p>
 
 
 ### Methods:
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text.
 - **Video**: CNNs like VGG, ImageNet, ResNet, etc. 
-- **Audio**:  RNN models like Vanilla RNN and Librosa library [6] (MFCC, melspectogram, spectral centroid). 
-- **Text**: RNN models like LSTM and Transformers like BERT[1]. <br>
+- **Audio**:  RNN models like Vanilla RNN and Librosa library <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[6]</a> (MFCC, melspectogram, spectral centroid). 
+- **Text**: RNN models like LSTM and Transformers like BERT <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a>. <br>
 
 
 The feature vectors of the 3 modalities will be combined and given as input to the supervised or unsupervised Machine Learning models. 
