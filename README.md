@@ -10,25 +10,6 @@ Several NLP models have tried to detect sarcasm in text statements using annotat
 ### Dataset Description:
 MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotated with sarcasm labels. Each utterance is accompanied by its context, which offers more details about the situation in which the utterance takes place. The dataset consists of 345 sarcastic videos and 6,020 non-sarcastic videos. The dataset is compiled from popular TV shows.
 
-<!---
-**Features of a Datapoint:**: 
-- Video Sequence for Utterance
-- Video Sequence for Context
-- Transcripts of the Videos
-- Speaker Name and Context character names
-- Label (Sarcastic or not)
-
-
-![sample_datapoint.jpg](./Images/sample_datapoint.PNG) 
-|:--:| 
-| **Utterance and Context Video sequences: Text and Audio-visual components (Credit: [6])** |
-
-![sample_json.jpg](./Images/sample_json.PNG) 
-|:--:| 
-| **Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: [6])** |
---->
-
-
 <p align="center">
 <img src="./Images/sample_datapoint.PNG" style="border: 1px solid black" >
 <figcaption align="middle">Utterance and Context Video sequences: Text and Audio-visual components (Credit: [6])<figcaption/>
@@ -60,11 +41,6 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 * K-Mean Clustering
 * Gaussian Mixture Model
 
-<!---
-![data_flowchart.jpg](./Images/data_flowchart.png) 
-|:--:| 
-| **Feature Extraction and Data Analysis Flowchart** |
---->
 
 <p align="center">
 <img src="./Images/data_flowchart.png" style="border: 1px solid black" >
