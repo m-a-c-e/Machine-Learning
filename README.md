@@ -45,7 +45,7 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text.
 - **Video**: CNNs like VGG, ImageNet, ResNet, etc. 
 - **Audio**:  RNN models like Vanilla RNN and Librosa library [6] (MFCC, melspectogram, spectral centroid). 
-- **Text**: RNN models like LSTM and Transformers like BERT[1]. <br/>
+- **Text**: RNN models like LSTM and Transformers like BERT[1]. <br>
 
 
 The feature vectors of the 3 modalities will be combined and given as input to the supervised or unsupervised Machine Learning models. 
