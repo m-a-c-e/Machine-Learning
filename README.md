@@ -38,7 +38,7 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 <p align="center">
 <img src="./Images/sample_json.PNG" style="border: 1px solid black" >
 <figcaption align="middle">Example of a JSON file that contains all information about the video sequences for a datapoint (Credit: [6])<figcaption/>
-<p/>
+</p>
 
 
 ### Methods:
