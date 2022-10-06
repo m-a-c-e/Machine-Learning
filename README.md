@@ -32,7 +32,7 @@ MUStARD(multimodal video corpus) [6] consists of audiovisual utterances annotate
 <p align="center">
 <img src="./Images/sample_datapoint.PNG" style="border: 1px solid black" >
 <figcaption align="middle">Utterance and Context Video sequences: Text and Audio-visual components (Credit: [6])<figcaption/>
-<p/>
+</p>
 
 
 <p align="center">
@@ -68,8 +68,8 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 
 <p align="center">
 <img src="./Images/data_flowchart.png" style="border: 1px solid black" >
-<figcaption align="middle">Feature Extraction and Data Analysis Flowchart<figcaption/>
-<p/>
+<figcaption align="middle">Feature Extraction and Data Analysis Flowchart</figcaption>
+</p>
 
 
 ### Potential Results and Discussion:
