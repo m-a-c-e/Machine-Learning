@@ -1,6 +1,6 @@
 # ML 7641: Team 21
 ## Project Title: Multi-Modal Sarcasm Detection
-
+hello
 ### Introduction:
 Sarcasm detection is a task under sentiment analysis that involves recognizing sarcastic utterances whose perlocutionary effect requires a great understanding of the conversational context, the utterance, and some basic knowledge to perceive the whole conversation. The ironic and metaphorical nature of sarcasm poses a challenge for computer models that try to analyze the sentiment of the conversation.
 
@@ -59,4 +59,3 @@ Furthermore, the interpretability of the model will also be analyzed using AI Ex
 [4] Tepperman, Joseph, David Traum, and Shrikanth Narayanan. "" Yeah right": sarcasm recognition for spoken dialogue systems." Ninth international conference on spoken language processing. 2006. [Link](http://www1.cs.columbia.edu/~julia/papers/teppermanetal06.pdf) <br/>
 [5] Byron C. Wallace, Do Kook Choe, Laura Kertz, and Eugene Charniak. 2014. "Humans Require Context to Infer Ironic Intent (so Computers Probably do, too)". In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 512–516, Baltimore, Maryland. Association for Computational Linguistics. [Link](https://aclanthology.org/P14-2084) <br/>
 [6] Castro, Santiago, et al. "Towards multimodal sarcasm detection (an _obviously_ perfect paper)." arXiv preprint arXiv:1906.01815 (2019). [Link](https://arxiv.org/pdf/1906.01815.pdf)
-
