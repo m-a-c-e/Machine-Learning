@@ -10,7 +10,6 @@ Several NLP models have tried to detect sarcasm in text statements using context
 ### Dataset Description:
 MUStARD(multimodal video corpus) <a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> consists of audiovisual utterances annotated with sarcasm labels. Each utterance is accompanied by its context, which offers more details about the situation in which the utterance takes place. The dataset consists of 345 sarcastic videos and 6,020 non-sarcastic videos. The dataset is compiled from popular TV shows.
 
-<!---
 **Features of a Datapoint:**: 
 - Video Sequence for Utterance
 - Video Sequence for Context
@@ -18,7 +17,7 @@ MUStARD(multimodal video corpus) <a href="https://arxiv.org/pdf/1906.01815.pdf">
 - Speaker Name and Context character names
 - Label (Sarcastic or not)
 
-
+<!---
 ![sample_datapoint.jpg](./Images/sample_datapoint.PNG) 
 |:--:| 
 | **Utterance and Context Video sequences: Text and Audio-visual components (Credit: <a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a>)** |
