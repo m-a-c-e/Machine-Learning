@@ -85,7 +85,7 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 
 ### Team Member Contributions:
 <p align="center">
-<img src="./Images/proposal_contribution.JPG" width="700" height="245" style="border: 1px solid black">
+<img src="./Images/proposal_contribution.JPG" width="690" height="241" style="border: 1px solid black">
 </p>
 
 ### Proposed Timeline:
