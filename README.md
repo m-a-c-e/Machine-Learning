@@ -45,7 +45,8 @@ MUStARD(multimodal video corpus) <a href="https://arxiv.org/pdf/1906.01815.pdf">
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text.
 - **Video**: CNNs like VGG, ImageNet, ResNet, etc. 
 - **Audio**:  RNN models like Vanilla RNN and Librosa library <a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> (MFCC, melspectogram, spectral centroid). 
-- **Text**: RNN models like LSTM and Transformers like BERT <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a>. <br>
+- **Text**: GloVE, ELMO, Word2Vec <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a>. 
+<br>
 
 
 The feature vectors of the 3 modalities will be combined and given as input to the supervised or unsupervised Machine Learning models. 
