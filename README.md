@@ -73,8 +73,7 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 
 
 ### Potential Results and Discussion:
-The goal of this project is to classify if a video is sarcastic or not given its audio, video and captions. The classifier model will output probability of a datapoint being sarcastic. The clustering models will distinguish between sarcastic and non-sarcastic content. Since the dataset is imbalanced, metrics like Precision, Recall, F1-Score, ROC-AUC score will be used to evaluate the Supervised Learning models. The clustering algorithms will be evaluated using Silhouette Coefficient.
-Furthermore, the interpretability of the model will also be analyzed using AI Explainability tools.
+Our ideal goal would be to demonstrate how our multimodal approach outperforms unimodal approaches and identify the advantage of each module in providing context by experimenting with supervised and unsupervised methods. Evaluating the results of unsupervised clustering and use the observations for analyzing and cleaning the data is another task which will be addressed. Finally, will be looking to optimize and compare the different supervised classifiers using the evaluation metrics. The interpretability of the models will also be analyzed using AI Explainability tools.
 
 ### References:
 <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a> Lydia Xu, Vera Xu. "Project Report: Sarcasm Detection" <br>
