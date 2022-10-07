@@ -95,7 +95,7 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 </p>
 
 <p align="center">
-<img src="./Images/timeline2.jpg" width="200" height="400" style="border: 1px solid black">
+<img src="./Images/timeline2.jpg" width="1000" height="1000" style="border: 1px solid black">
 </p>
 
 ### <a href="https://docs.google.com/spreadsheets/d/1IJ70LMrsxGJPikwkiIJkm8zs2LFqJ11leJsC7XJy1xw/edit?usp=sharing">Gannt Chart Link</a>
