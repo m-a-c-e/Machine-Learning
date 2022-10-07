@@ -44,7 +44,7 @@ MUStARD(multimodal video corpus) <a href="https://arxiv.org/pdf/1906.01815.pdf">
 ### Methods:
 A feature vector will be generated for each datapoint that will be a combination of its audio, video, and text.
 - **Video**: CNNs like VGG, ImageNet, ResNet, etc. 
-- **Audio**:  RNN models like Vanilla RNN and Librosa library <a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> (MFCC, melspectogram, spectral centroid). 
+- **Audio**:  RNN models and Librosa library <a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> (MFCC, melspectogram, spectral centroid). 
 - **Text**: GloVE, ELMO, Word2Vec <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/custom/15791781.pdf">[1]</a>. 
 <br>
 
@@ -68,7 +68,7 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 --->
 
 <p align="center">
-<img src="./Images/data_flowchart.png" style="border: 1px solid black" >
+<img src="./Images/data_flowchart.jpg" style="border: 1px solid black" >
 <figcaption align="middle">Feature Extraction and Data Analysis Flowchart</figcaption>
 </p>
 
@@ -84,3 +84,9 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 <a href="https://aclanthology.org/P14-2084">[5]</a> Byron C. Wallace, Do Kook Choe, Laura Kertz, and Eugene Charniak. 2014. "Humans Require Context to Infer Ironic Intent (so Computers Probably do, too)". In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 512–516, Baltimore, Maryland. Association for Computational Linguistics.<br>
 <a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> Castro, Santiago, et al. "Towards multimodal sarcasm detection (an _obviously_ perfect paper)." arXiv preprint arXiv:1906.01815 (2019).
 
+### Team Member Contributions:
+<p align="center">
+<img src="./Images/proposal_contribution.JPG" style="border: 1px solid black">
+</p>
+
+### <a href="https://docs.google.com/spreadsheets/d/1IJ70LMrsxGJPikwkiIJkm8zs2LFqJ11leJsC7XJy1xw/edit?usp=sharing">Gannt Chart Link</a>
