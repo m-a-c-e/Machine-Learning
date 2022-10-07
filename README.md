@@ -89,4 +89,13 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 <img src="./Images/proposal_contribution.JPG" style="border: 1px solid black">
 </p>
 
+### Proposed Timeline:
+<p align="center">
+<img src="./Images/timeline.JPG" style="border: 1px solid black">
+</p>
+
+<p align="center">
+<img src="./Images/timeline2.JPG" style="border: 1px solid black">
+</p>
+
 ### <a href="https://docs.google.com/spreadsheets/d/1IJ70LMrsxGJPikwkiIJkm8zs2LFqJ11leJsC7XJy1xw/edit?usp=sharing">Gannt Chart Link</a>
