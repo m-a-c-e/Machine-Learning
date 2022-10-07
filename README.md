@@ -55,12 +55,14 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 * Naive Bayes
 * Support Vector Machines
 * Deep Neural Networks
-Metrics: Precision, Recall, Accuracy, F1-Score
+
+**Metrics:** Precision, Recall, Accuracy, F1-Score
 
 **Unsupervised Methods:**
 * K-Mean Clustering
 * Gaussian Mixture Model
-Metrics: Silhouette Coefficient, Beta CV, pairwise measure and entropy based methods
+
+**Metrics:** Silhouette Coefficient, Beta CV, pairwise measure and entropy based methods
 
 <!---
 ![data_flowchart.jpg](./Images/data_flowchart.png) 
