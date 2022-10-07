@@ -55,10 +55,12 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 * Naive Bayes
 * Support Vector Machines
 * Deep Neural Networks
+Metrics: Precision, Recall, Accuracy, F1-Score
 
 **Unsupervised Methods:**
 * K-Mean Clustering
 * Gaussian Mixture Model
+Metrics: Silhouette Coefficient, Beta CV, pairwise measure and entropy based methods
 
 <!---
 ![data_flowchart.jpg](./Images/data_flowchart.png) 
@@ -94,3 +96,5 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 </p>
 
 ### <a href="https://docs.google.com/spreadsheets/d/1IJ70LMrsxGJPikwkiIJkm8zs2LFqJ11leJsC7XJy1xw/edit?usp=sharing">Gannt Chart Link</a>
+### <a href="https://www.canva.com/design/DAFOSFtGCEs/pXKpJgYamRmR7uMXbvFJcw/view?utm_content=DAFOSFtGCEs&utm_campaign=designshare&utm_medium=link&utm_source=viewer">Proposal Slides</a>
+### <a href="https://docs.google.com/spreadsheets/d/1IJ70LMrsxGJPikwkiIJkm8zs2LFqJ11leJsC7XJy1xw/edit?usp=sharing">Proposal Video - Youtube</a>
