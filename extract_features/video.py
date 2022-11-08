@@ -6,7 +6,7 @@ from tqdm import tqdm
 import torch
 import torch.utils.data
 import torch.nn
-import torchvision
+
 
 
 class Video(torch.utils.data.Dataset):
