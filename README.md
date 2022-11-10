@@ -1,4 +1,6 @@
 # ML 7641: Team 21
+
+# ---------------------------------- Project Proposal ----------------------------------
 ## Project Title: Multi-Modal Sarcasm Detection
 
 ### Introduction:
@@ -100,3 +102,29 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 ### <a href="https://docs.google.com/spreadsheets/d/1IJ70LMrsxGJPikwkiIJkm8zs2LFqJ11leJsC7XJy1xw/edit?usp=sharing">Gantt Chart Link</a>
 ### <a href="https://www.canva.com/design/DAFOSFtGCEs/pXKpJgYamRmR7uMXbvFJcw/view?utm_content=DAFOSFtGCEs&utm_campaign=designshare&utm_medium=link&utm_source=viewer">Proposal Slides</a>
 ### <a href="https://www.youtube.com/watch?v=E7hygYxMoBk">Proposal Video - Youtube</a>
+
+
+# ---------------------------------- Project MidTerm Report ----------------------------------
+
+## Feature Extraction
+### Text
+### Audio
+### Video
+
+## Exploratory Data Analysis
+### Text
+### Audio
+### Video
+
+## Feature Reduction/Selection
+### Most Drifted Features
+### PCA
+### RF (not sure)
+
+## Model Used
+### Supervised
+### Unsupervised
+
+## Results and Discussion
+
+## Future Directions
