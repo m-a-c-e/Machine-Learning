@@ -1,6 +1,6 @@
 # ML 7641: Team 21
 
-# ---------------------------------- Project Proposal ----------------------------------
+# ----- Project Proposal -----
 ## Project Title: Multi-Modal Sarcasm Detection
 
 ### Introduction:
@@ -104,7 +104,7 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 ### <a href="https://www.youtube.com/watch?v=E7hygYxMoBk">Proposal Video - Youtube</a>
 
 
-# ---------------------------------- Project MidTerm Report ----------------------------------
+# ----- Project MidTerm Report -----
 
 ## Feature Extraction
 ### Text
