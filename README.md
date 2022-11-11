@@ -128,7 +128,6 @@ Feature extraction on Audio is done using the Librosa library. First, we use the
 ### Unsupervised
 For Unsupervisd learning model, we decided to fit our data using a Gaussian Mixture Model individually to each type of feature (video, audio and text). Since the groud truth label for all samples is binary, that is, sarcastic or not sarcastic, the number of componenents for our GMM was set to 2. Next, the data was first separated in 9:1 ratio. The first split containing the 90 percent of data was then trained using kfold cross validation with number of splits set to 5. This helped us get the best model using all of the 90 percent of data split. This model was then evaluated against the 10 percent split to obtain the accuracy for a single iteration. Since the data split was random, the procedure was run for 10 iterations and the best model out of the 10 iterations was picked to get the final accuracy. The final accuracy after training Video, Audio and Text features separately, was as follows:
 <table>
-  <caption>GMM Accuracy (# components = 2)</caption>
   <tr>
     <th>Feature (dim)</th>
     <th>Accuracy</th>
