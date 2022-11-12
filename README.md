@@ -112,6 +112,7 @@ Feature extraction on Text is done using BERT. The labels are numerically encode
 ### Audio
 Feature extraction on Audio is done using the Librosa library. First, we use the vocal separation technique implemented in [1] to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as distinctness, frequency, and amplitude. For each audio file we extract 283 features. 
 ### Video
+The video_file name is first mapped to its corresponding class label (0: non-sarcastic, 1: sarcastic) and are stored separately. The visual features are extracted for each frame in the utterance video using a pool5 layer of a ResNet-152 model that has been pre-trained on the ImageNet dataset. We first preprocess every frame by resizing, center-cropping and normalizing it. To obtain a visual representation of each video, we compute the mean of the obtained 2048 dimensional feature vector for every frame. We used the same averaging strategy as with the other modalities.
 
 ## Exploratory Data Analysis
 ### Text
