@@ -114,7 +114,7 @@ Feature extraction on Text is done using BERT. The labels are numerically encode
 Feature extraction on Audio is done using the Librosa library. First, we use the vocal separation technique implemented in [1] to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as pitch, intonation, and other tonal-specific details of the speaker. We segment the audio into equal sized segments of size = 512, and we extract the above mentioned 283 features for each segment and compute the average across all segments. This serves as the feature representation of the audio file. 
 
 <p align="center">
-<img src="./Images/images/image17.png"/>
+<img src="./Images/images/image17.png"/ width="600">
 </p>
 
 
@@ -133,7 +133,7 @@ We perform EDA on the scaled features.
 
 This EDA was an attempt to understand how the textual portion of the dataset is distributed between sarcastic and non-sarcastic labels and identify any inherent patterns that can be exploited by our model. We begin by plotting the distribution statistics of the dataset- the division of sarcastic dialogues uttered based on shows, actors etc.
 
-<p float="left">
+<p float="left" align="center">
 <img src="./Images/images/image20.png"/>
 
 <img src="./Images/images/image6.png"/>
@@ -141,8 +141,8 @@ This EDA was an attempt to understand how the textual portion of the dataset is 
 
 We determine the polarity of sarcastic and non sarcastic dialogues to see if there is some consistency in each group which is sensible.
 
-<p float="left">
-<img src="./Images/images/image18.png"/>
+<p float="left" align="center">
+<img src="./Images/images/image18.png"/ width="500">
 
 </p>
 
@@ -153,19 +153,19 @@ Then we also plot a wordcloud visualization after properly lemmatising and remov
 ### Correlation - Text, Audio, Video
 Analyzing the correlation matrix of the text features we can observe that most features have a positive correlation with values > 0.7. For the audio features most features have a complete overlap with all values being > 0.975. For the video features some features have a correlation value < 0.4 but a good proportion of features have a correlation value > 0.4. In summary, as the features are highly correlated, they can be reduced to create a smaller set of features that can still capture the variance in the data. 
 
-<p float="left">
+<p float="left" align="center">
 <img src="./Images/images/image7.png"/>
 
 <img src="./Images/images/image16.png"/>
 </p>
 
-<p float="left">
+<p float="left" align="center">
 <img src="./Images/images/image19.png"/>
 
 <img src="./Images/images/image24.png"/>
 </p>
 
-<p float="left">
+<p float="left" align="center">
 <img src="./Images/images/image13.png"/>
 
 <img src="./Images/images/image12.png"/>
