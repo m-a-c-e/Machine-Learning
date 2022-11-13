@@ -82,12 +82,13 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 Feature extraction on Text is done using BERT. The dialogues are tokenized into sentences and then into words using NLTK's PUNKT library. The corresponding attention mask is generated and given as input along with the numerically encoded vector to Pytorch pretrained BERT model to create the vector embedding. This output is obtained from the final layer using output_all_encoded_layer=True to get the output of all the 12 layers resulting in a vector of size 768.
 
 ### Audio
-Feature extraction on Audio is done using the Librosa library. First, we use the vocal separation technique implemented in [1] to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as pitch, intonation, and other tonal-specific details of the speaker. We segment the audio into equal sized segments of size = 512, and we extract the above mentioned 283 features for each segment and compute the average across all segments. This serves as the feature representation of the audio file. 
+Feature extraction on Audio is done using the Librosa library<a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a>. First, we use the vocal separation technique implemented in [1] to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as pitch, intonation, and other tonal-specific details of the speaker. We segment the audio into equal sized segments of size = 512, and we extract the above mentioned 283 features for each segment and compute the average across all segments. This serves as the feature representation of the audio file. 
 
-[1] https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html
+
 
 <p align="center">
 <img src="./Images/images/image17.png"/ width="600">
+<figcaption align="middle">Vocal Separation Plot using Librosa</figcaption>
 </p>
 
 
@@ -108,8 +109,9 @@ This EDA was an attempt to understand how the textual portion of the dataset is 
 
 <p float="left" align="center">
 <img src="./Images/images/image20.png"/>
-
+<figcaption align="middle">Character Distribution</figcaption>
 <img src="./Images/images/image6.png"/>
+<figcaption align="middle">TV Show Distribution</figcaption>
 </p>
 
 We determine the polarity of sarcastic and non sarcastic dialogues to see if there is some consistency in each group which is sensible.
@@ -123,8 +125,9 @@ Then we also plot a wordcloud visualization after properly lemmatising and remov
 
 <p float="left" align="center">
 <img src="./Images/images/image21.png" width="500"/>
-
+<figcaption align="middle">Word cloud for sarcastic words</figcaption>
 <img src="./Images/images/image5.png" width="500"/>
+<figcaption align="middle">Word cloud for non-sarcastic words</figcaption>
 </p>
 
 After performing this text analysis, we have a strong idea that the data is coherent, sensible and well distributed.
@@ -153,9 +156,9 @@ Analyzing the correlation matrix of the text features we can observe that most f
 
 ### Mean Difference - Text, Audio, Video
 To compare how the feature values change between the “sarcasm” class and “not sarcasm” class, we analyze the feature value distribution for each class using a 1D histogram. More specifically, we analyze how much the mean of the features changes between the “sarcasm” and “not sarcasm” classes:
-
-mean_difference = abs(mean(X[feature_number, y_sarcastic]) - mean(X[feature_number, y_not_sarcastic])) 
-
+<p align="center">
+mean difference = abs(mean(X[feature_number, y_sarcastic]) - mean(X[feature_number, y_not_sarcastic]))
+</p>
 The higher the value of mean_difference the greater is the shift in the feature distribution across classes. The following histograms represent the mean_difference for the text, audio and the video modality.
 
 <p float="left" align="center">
@@ -181,13 +184,12 @@ We sort the mean_difference of all the features in a non-increasing order. We ca
 Using the Principle Component analysis technique to extract the top-100 principle components. From PCA we can observe that only one component contributes for more than 5% of explained variance and 8 features that capture more than 2% of the variance. Therefore, we can conclude that although features might be correlated there aren’t any particular components that capture most of the variance in the data. Also, the cumulative variance captured by the first 100 features = 77.134%. 
 
 <p float="left" align="center">
-<img src="./Images/images/image23.png"/>
-
+<img src="./Images/images/image23.png" width="650"/>
+<figcaption align="middle">Explained variance by PCA components</figcaption>
 </p>
 
-## Model Used
-### Supervised
-#### Support Vector Machine
+## Supervised Learning Methods
+### Support Vector Machine
 
 For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We run 10-fold cross validation to determine the best feature reduction/selection technique. 
 
@@ -198,9 +200,9 @@ For the supervised models we use a Support Vector Machine for the binary classif
 <img src="./Images/images/image9.png"/>
 </p>
 
+<sub>Note: Red denotes the actual values. Blue denotes the mean values</sub>
 
-
-#### Gaussian Naive Bayes
+### Gaussian Naive Bayes
 
 Along with SVM, we also use Gaussian NB to compare our results. GNB is a relatively simple model compared to SVM and can be trained quickly.
 
@@ -208,6 +210,8 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 <img src="./Images/images/image2.png"/>
 <img src="./Images/images/image8.png"/>
 </p>
+
+<sub>Note: Red denotes the actual values. Blue denotes the mean values</sub>
 
 Performance of SVM remains relatively constant compared to GNB as we increase the number of features. Also, the performance of SVM remains better than GNB. Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. Therefore, we can conclude that the most drifted feature selection performs better than PCA.  
 
@@ -241,13 +245,11 @@ Overall, the performance of the Support vector machine classifier is better than
 
 ## Future Directions
 
-Hyper parameter tuning for supervised models
-Unsupervised model implementations (GMM, KMeans)
-Explore other feature extraction techniques
-Evaluating the performance on external dataset
+* Hyper parameter tuning for supervised models
+* Unsupervised model implementations (GMM, KMeans)
+* Explore other feature extraction techniques
+* Evaluating the performance on external dataset
 
-### Potential Results and Discussion:
-Our ideal goal would be to demonstrate how our multimodal approach outperforms unimodal approaches and identify the advantage of each module in providing context by experimenting with supervised and unsupervised methods. Evaluating the results of unsupervised clustering and use the observations for analyzing and cleaning the data is another task which will be addressed. Finally, will be looking to optimize and compare the different supervised classifiers using the evaluation metrics. The interpretability of the models will also be analyzed using AI Explainability tools.
 
 ### References:
 <a href="https://aclanthology.org/P15-2124.pdf">[1]</a> Joshi, Aditya, Vinita Sharma, and Pushpak Bhattacharyya. "Harnessing context incongruity for sarcasm detection." Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 2: Short Papers). 2015. <br>
@@ -256,6 +258,7 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 <a href="http://www1.cs.columbia.edu/~julia/papers/teppermanetal06.pdf">[4]</a> Tepperman, Joseph, David Traum, and Shrikanth Narayanan. "" Yeah right": sarcasm recognition for spoken dialogue systems." Ninth international conference on spoken language processing. 2006.<br>
 <a href="https://aclanthology.org/P14-2084">[5]</a> Byron C. Wallace, Do Kook Choe, Laura Kertz, and Eugene Charniak. 2014. "Humans Require Context to Infer Ironic Intent (so Computers Probably do, too)". In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 512–516, Baltimore, Maryland. Association for Computational Linguistics.<br>
 <a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> Castro, Santiago, et al. "Towards multimodal sarcasm detection (an _obviously_ perfect paper)." arXiv preprint arXiv:1906.01815 (2019).
+<a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a> Librosa Library
 
 ### Team Member Contributions:
 <p align="center">
