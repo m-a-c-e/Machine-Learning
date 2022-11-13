@@ -121,7 +121,8 @@ We determine the polarity of sarcastic and non sarcastic dialogues to see if the
 
 
 <p float="left" align="center">
-<img src="./Images/images/image18.png"/ width="500">
+<img src="./Images/images/polsar.png"/ width="500">
+<img src="./Images/images/pol-nonsar.png"/ width="500">
 
 </p>
 
