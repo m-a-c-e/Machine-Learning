@@ -108,10 +108,11 @@ We perform EDA on the scaled features.
 This EDA was an attempt to understand how the textual portion of the dataset is distributed between sarcastic and non-sarcastic labels and identify any inherent patterns that can be exploited by our model. We begin by plotting the distribution statistics of the dataset- the division of sarcastic dialogues uttered based on shows, actors etc.
 
 <p float="left" align="center">
-<img src="./Images/images/image20.png"/>
-<figcaption align="middle">Character Distribution</figcaption>
-<img src="./Images/images/image6.png"/>
-<figcaption align="middle">TV Show Distribution</figcaption>
+  
+<img src="./Images/images/image20.png" width="500"/>
+<img src="./Images/images/image6.png" width="500"/>
+  <figcaption>Character and TV Show Distribution</figcaption>
+  
 </p>
 
 We determine the polarity of sarcastic and non sarcastic dialogues to see if there is some consistency in each group which is sensible.
@@ -125,9 +126,8 @@ Then we also plot a wordcloud visualization after properly lemmatising and remov
 
 <p float="left" align="center">
 <img src="./Images/images/image21.png" width="500"/>
-<figcaption align="middle">Word cloud for sarcastic words</figcaption>
 <img src="./Images/images/image5.png" width="500"/>
-<figcaption align="middle">Word cloud for non-sarcastic words</figcaption>
+<figcaption align="middle">Word cloud for sarcastic and non-sarcastic words</figcaption>
 </p>
 
 After performing this text analysis, we have a strong idea that the data is coherent, sensible and well distributed.
