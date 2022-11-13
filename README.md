@@ -171,12 +171,31 @@ Analyzing the correlation matrix of the text features we can observe that most f
 <img src="./Images/images/image12.png"/>
 </p>
 
+### Mean Difference - Text, Audio, Video
+To compare how the feature values change between the “sarcasm” class and “not sarcasm” class, we analyze the feature value distribution for each class using a 1D histogram. More specifically, we analyze how much the mean of the features changes between the “sarcasm” and “not sarcasm” classes:
+mean_difference = abs(mean(X[feature_number, y_sarcastic]) - mean(X[feature_number, y_not_sarcastic])). 
+
+The higher the value of mean_difference the greater is the shift in the feature distribution across classes. The following histograms represent the mean_difference for the text, audio and the video modality.
+
+**Add iamges here**
+<p float="left" align="center">
+<img src="./Images/images/image13.png"/>
+
+<img src="./Images/images/image12.png"/>
+</p>
+
+From the graphs we can observe that most of the features have a mean_difference < 0.05, there are only 4 features with mean_difference > 0.1, and 73 features for mean_difference > 0.05 and mean_difference < 0.1. So, there is no significant difference between the feature distribution across classes. 
 
 
 ## Feature Reduction/Selection
+
+For feature reduction/selection techniques we use the following techniques:
+
 ### Most Drifted Features
+We sort the mean_difference of all the features in a non-increasing order and order 
+
 ### PCA
-### RF (not sure)
+
 
 ## Model Used
 ### Supervised
