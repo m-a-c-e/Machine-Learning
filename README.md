@@ -148,6 +148,17 @@ We determine the polarity of sarcastic and non sarcastic dialogues to see if the
 
 Then we also plot a wordcloud visualization after properly lemmatising and removing stop words to see what are some prominent words in each group to observe if these words are coherent and likely to make a sentence sound sarcastic. 
 
+<p float="left" align="center">
+<img src="./Images/images/image21.png"/>
+
+<img src="./Images/images/image5.png"/>
+</p>
+
+After performing this text analysis, we have a strong idea that the data is coherent, sensible and well distributed.
+
+Audio and Video files can’t be analyzed directly without pre-processing. Therefore, we perform exploratory data analysis on the audio and video files after feature extraction. We also include the extracted text features in this process. 
+
+There are no missing values in the dataset. We use a min-max scaler to standardize the data so that all the values are between 0 and 1. We perform EDA on the scaled features.
 
 
 ### Correlation - Text, Audio, Video
@@ -173,15 +184,17 @@ Analyzing the correlation matrix of the text features we can observe that most f
 
 ### Mean Difference - Text, Audio, Video
 To compare how the feature values change between the “sarcasm” class and “not sarcasm” class, we analyze the feature value distribution for each class using a 1D histogram. More specifically, we analyze how much the mean of the features changes between the “sarcasm” and “not sarcasm” classes:
-mean_difference = abs(mean(X[feature_number, y_sarcastic]) - mean(X[feature_number, y_not_sarcastic])). 
+
+mean_difference = abs(mean(X[feature_number, y_sarcastic]) - mean(X[feature_number, y_not_sarcastic])) 
 
 The higher the value of mean_difference the greater is the shift in the feature distribution across classes. The following histograms represent the mean_difference for the text, audio and the video modality.
 
-**Add iamges here**
 <p float="left" align="center">
-<img src="./Images/images/image13.png"/>
+<img src="./Images/images/image14.png"/>
 
-<img src="./Images/images/image12.png"/>
+<img src="./Images/images/image4.png"/>
+  
+<img src="./Images/images/image1.png"/>
 </p>
 
 From the graphs we can observe that most of the features have a mean_difference < 0.05, there are only 4 features with mean_difference > 0.1, and 73 features for mean_difference > 0.05 and mean_difference < 0.1. So, there is no significant difference between the feature distribution across classes. 
@@ -192,13 +205,39 @@ From the graphs we can observe that most of the features have a mean_difference 
 For feature reduction/selection techniques we use the following techniques:
 
 ### Most Drifted Features
-We sort the mean_difference of all the features in a non-increasing order and order 
+We sort the mean_difference of all the features in a non-increasing order. We call this order the “most drifted features”. Then, we use 5-fold cross validation technique to determine the best top-k most drifted features that maximizes the f1-score on the test data.
 
 ### PCA
 
+Using the Principle Component analysis technique to extract the top-100 principle components. From PCA we can observe that only one component contributes for more than 5% of explained variance and 8 features that capture more than 2% of the variance. Therefore, we can conclude that although features might be correlated there aren’t any particular components that capture most of the variance in the data. Also, the cumulative variance captured by the first 100 features = 77.134%. 
+
+<p float="left" align="center">
+<img src="./Images/images/image23.png"/>
+
+</p>
 
 ## Model Used
 ### Supervised
+#### Support Vector Machine
+
+For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We run 10-fold cross validation to determine the best feature reduction/selection technique. 
+
+*Note that here we don’t perform hyper parameter tuning for the SVM classifier. This will be explored later. 
+
+<p float="left" align="center">
+<img src="./Images/images/image22.png"/>
+
+</p>
+
+#### Gaussian Naive Bayes
+
+Along with SVM, we also use Gaussian NB to compare our results. GNB is a relatively simple model compared to SVM and can be trained quickly.
+
+<p float="left" align="center">
+<img src="./Images/images/image2.png"/>
+
+</p>
+
 ### Unsupervised
 For Unsupervisd learning model, we decided to fit our data using a Gaussian Mixture Model individually to each type of feature (video, audio and text). Since the groud truth label for all samples is binary, that is, sarcastic or not sarcastic, the number of componenents for our GMM was set to 2. Next, the data was first separated in 9:1 ratio. The first split containing the 90 percent of data was then trained using kfold cross validation with number of splits set to 5. This helped us get the best model using all of the 90 percent of data split. This model was then evaluated against the 10 percent split to obtain the accuracy for a single iteration. Since the data split was random, the procedure was run for 10 iterations and the best model out of the 10 iterations was picked to get the final accuracy. The final accuracy after training Video, Audio and Text features separately, was as follows:
 <table>
