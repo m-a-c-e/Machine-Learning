@@ -98,14 +98,16 @@ From the above figure we can observe that Full Spectrum (actual audio file) = Fo
 The visual features are extracted for each frame in the utterance video using a pool5 layer of a ResNet-152 model that has been pre-trained on the ImageNet dataset. Each frame of the video is first resized, and their center is cropped and then the image is normalized. The processed video frame is input to the ResNet-152 model and the features are extracted. We perform the same operation for all the frames in the given video and average the features across all the frames. The resuling 2048 feature vector is the feature representation of the video file. 
 
 ## Exploratory Data Analysis (EDA)
-### EDA - Text
-
-Audio and Video files can’t be analyzed directly without pre-processing. Therefore, we perform exploratory data analysis on the audio and video files after feature extraction. We also include the extracted text features in this process. 
+### Data preprocessing
 
 **Handling Missing Values:** There are no missing values in the dataset. 
 
 **Normalizing the dataset:** We use a min-max scaler to standardize the data so that all the values are between 0 and 1. 
 We perform EDA on the scaled features. 
+
+Audio and Video files can’t be analyzed directly without pre-processing. Therefore, we perform exploratory data analysis on the audio and video files after feature extraction. We also include the extracted text features in this process. 
+
+### Text EDA
 
 This EDA was an attempt to understand how the textual portion of the dataset is distributed between sarcastic and non-sarcastic labels and identify any inherent patterns that can be exploited by our model. We begin by plotting the distribution statistics of the dataset- the division of sarcastic dialogues uttered based on shows, actors etc.
 
