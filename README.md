@@ -179,7 +179,7 @@ From the graphs we can observe that most of the features have a mean_difference 
 For feature reduction/selection techniques we use the following techniques:
 
 ### Most Drifted Features
-We sort the mean_difference of all the features in a non-increasing order. We call this order the “most drifted features”. Then, we use 5-fold cross validation technique to determine the best top-k most drifted features that maximizes the f1-score on the test data.
+We sort the mean_difference of all the features in a non-increasing order. We call this order the “most drifted features”. Then, we use 10-fold cross validation technique to determine the best top-k most drifted features that maximizes the f1-score on the test data.
 
 ### Principle Component Analysis - PCA
 
