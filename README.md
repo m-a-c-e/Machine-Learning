@@ -145,6 +145,8 @@ Analyzing the correlation matrix of the text features we can observe that most f
 
 <img src="./Images/images/image12.png"/>
 </p>
+
+
 ## Feature Reduction/Selection
 ### Most Drifted Features
 ### PCA
