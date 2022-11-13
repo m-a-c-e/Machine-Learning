@@ -117,14 +117,15 @@ This EDA was an attempt to understand how the textual portion of the dataset is 
   
 </p>
 
-We determine the polarity of sarcastic and non sarcastic dialogues to see if there is some consistency in each group which is sensible.
+We determine the polarity of sarcastic and non sarcastic dialogues to see if there is some consistency in each group which is sensible. Through analyzing these results we can understand that sarcastic statements are overly positive, to convey the opposite statement, as in when we are generally annoyed about something we sound sarcastically at peace with it. Non sarcastic dialogues, on the other hand, are mostly neutral, which seems like a fair distribution. 
+
 
 <p float="left" align="center">
 <img src="./Images/images/image18.png"/ width="500">
 
 </p>
 
-Then we also plot a wordcloud visualization after properly lemmatising and removing stop words to see what are some prominent words in each group to observe if these words are coherent and likely to make a sentence sound sarcastic. 
+Then we also plot a wordcloud visualization after properly lemmatising and removing stop words to see what are some prominent words in each group to observe if these words are coherent and likely to make a sentence sound sarcastic. We didn't gain a lot of relevant or useful information through wordcloud. This could depict the diversity in data.
 
 <p float="left" align="center">
 <img src="./Images/images/image21.png" width="400"/>
