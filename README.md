@@ -91,7 +91,7 @@ Feature extraction on Audio is done using the Librosa library. First, we use the
 <figcaption align="middle">Vocal Separation Plot using Librosa</figcaption>
 </p>
 
-From the above figure we can observe that Full Spectrum (actual audio file) = Foreground (Vocals of Characters) + Background (Laugh Tracks and Instruments). By using the vocal separation technique in <a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a>, we remove the backgroud information and extract only the foreground information. This ensures that there isn't any inherent biases such as laugh tracks in the audio feature representation. 
+From the above figure we can observe that Full Spectrum (actual audio file) = Foreground (Vocals of Characters) + Background (Laugh Tracks and Instruments). By using the vocal separation technique in <a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a>, we remove the background information and extract only the foreground information. This ensures that there isn't any inherent biases such as laugh tracks in the audio feature representation. 
 
 
 ### Video
