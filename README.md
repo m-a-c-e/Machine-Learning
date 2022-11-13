@@ -82,7 +82,7 @@ The feature vectors of the 3 modalities will be combined and given as input to t
 Feature extraction on Text is done using BERT. The dialogues are tokenized into sentences and then into words using NLTK's PUNKT library. The corresponding attention mask is generated and given as input along with the numerically encoded vector to Pytorch pretrained BERT model to create the vector embedding. This output is obtained from the final layer using output_all_encoded_layer=True to get the output of all the 12 layers resulting in a vector of size 768.
 
 ### Audio
-Feature extraction on Audio is done using the Librosa library<a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a>. First, we use the vocal separation technique implemented in [1] to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as pitch, intonation, and other tonal-specific details of the speaker. We segment the audio into equal sized segments of size = 512, and we extract the above mentioned 283 features for each segment and compute the average across all segments. This serves as the feature representation of the audio file. 
+Feature extraction on Audio is done using the Librosa library. First, we use the vocal separation technique implemented in <a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a> to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as pitch, intonation, and other tonal-specific details of the speaker. We segment the audio into equal sized segments of size = 512, and we extract the above mentioned 283 features for each segment and compute the average across all segments. This serves as the feature representation of the audio file. 
 
 
 
@@ -125,8 +125,8 @@ We determine the polarity of sarcastic and non sarcastic dialogues to see if the
 Then we also plot a wordcloud visualization after properly lemmatising and removing stop words to see what are some prominent words in each group to observe if these words are coherent and likely to make a sentence sound sarcastic. 
 
 <p float="left" align="center">
-<img src="./Images/images/image21.png" width="500"/>
-<img src="./Images/images/image5.png" width="500"/>
+<img src="./Images/images/image21.png" width="400"/>
+<img src="./Images/images/image5.png" width="400"/>
 <figcaption align="middle">Word cloud for sarcastic and non-sarcastic words</figcaption>
 </p>
 
@@ -237,10 +237,9 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 |                      	|                      	| SVM   	| 0.688 +- 0.097 	| 0.684 +- 0.076  	| 0.686 +- 0.070 	| 0.683 +- 0.076 	| 0.767 +- 0.064 	|
 
 
-So we can see that when we combine all three modalities the performance is highly improved compared to individual modalities which indicates that it is useful to follow a multimodal approach. 
+**Comparing Modalities:** So we can see that when we combine all three modalities the performance is highly improved compared to individual modalities which indicates that it is useful to follow a multimodal approach. While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately.
 
-While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately.
-Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA.
+**Comparing Classified and feature reducion/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
 
 
 ## Future Directions
@@ -257,8 +256,8 @@ Overall, the performance of the Support vector machine classifier is better than
 <a href="https://arxiv.org/pdf/1610.08815.pdf">[3]</a> Poria, Soujanya, et al. "A deeper look into sarcastic tweets using deep convolutional neural networks." arXiv preprint arXiv:1610.08815 (2016). <br>
 <a href="http://www1.cs.columbia.edu/~julia/papers/teppermanetal06.pdf">[4]</a> Tepperman, Joseph, David Traum, and Shrikanth Narayanan. "" Yeah right": sarcasm recognition for spoken dialogue systems." Ninth international conference on spoken language processing. 2006.<br>
 <a href="https://aclanthology.org/P14-2084">[5]</a> Byron C. Wallace, Do Kook Choe, Laura Kertz, and Eugene Charniak. 2014. "Humans Require Context to Infer Ironic Intent (so Computers Probably do, too)". In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 512–516, Baltimore, Maryland. Association for Computational Linguistics.<br>
-<a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> Castro, Santiago, et al. "Towards multimodal sarcasm detection (an _obviously_ perfect paper)." arXiv preprint arXiv:1906.01815 (2019).
-<a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a> Librosa Library
+<a href="https://arxiv.org/pdf/1906.01815.pdf">[6]</a> Castro, Santiago, et al. "Towards multimodal sarcasm detection (an _obviously_ perfect paper)." arXiv preprint arXiv:1906.01815 (2019). <br>
+<a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a> Vocal Sepration using Librosa Library
 
 ### Team Member Contributions:
 <p align="center">
