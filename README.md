@@ -91,6 +91,8 @@ Feature extraction on Audio is done using the Librosa library. First, we use the
 <figcaption align="middle">Vocal Separation Plot using Librosa</figcaption>
 </p>
 
+From the above figure we can observe that Full Spectrum (actual audio file) = Foreground (Vocals of Characters) + Background (Laugh Tracks and Instruments). By using the vocal separation technique in <a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a>, we remove the backgroud information and extract only the foreground information. This ensures that there isn't any inherent biases such as laugh tracks in the audio feature representation. 
+
 
 ### Video
 The visual features are extracted for each frame in the utterance video using a pool5 layer of a ResNet-152 model that has been pre-trained on the ImageNet dataset. Each frame of the video is first resized, and their center is cropped and then the image is normalized. The processed video frame is input to the ResNet-152 model and the features are extracted. We perform the same operation for all the frames in the given video and average the features across all the frames. The resuling 2048 feature vector is the feature representation of the video file. 
