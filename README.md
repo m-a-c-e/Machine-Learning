@@ -262,21 +262,21 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 <a href="https://librosa.org/librosa_gallery/auto_examples/plot_vocal_separation.html">[7]</a> Vocal Sepration using Librosa Library
 
 ### Team Member Contributions:
+<p align="center">
 
-## Results and Discussion
-
-| Name | Contributions |
-|------|---------------|
-|Sai Prasath | Did nothing |
-|Sinduja | Did nothing |
-|Aparna | Did nothing |
-|Ishwarya | Did nothing |
-|Manan | Did nothing |
-
+| Name                              	| Contribution                                              	|
+|-----------------------------------	|-----------------------------------------------------------	|
+| Aparna Shree Sivanandam           	| Text preprocessing, EDA, Feature reduction                	|
+| Ishwarya Sivakumar                	| Video preprocessing and EDA                               	|
+| Manan Patel                       	| Audio EDA and Supervised method                           	|
+| Sai Prasath                       	| Audio preprocessing, Feature reduction, Supervised method 	|
+| Santosh Sinduja Sankara Narayanan 	| Video preprocessing and EDA                               	|
+</p>
+<!--
 ### Team Member Contributions:
 <p align="center">
 <img src="./Images/proposal_contribution.JPG" width="690" height="241" style="border: 1px solid black">
-</p>
+</p> -->
 
 ### Proposed Timeline:
 <p align="center">
