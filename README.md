@@ -128,6 +128,12 @@ We perform EDA on the scaled features.
 ### Correlation - Text, Audio, Video
 Analyzing the correlation matrix of the text features we can observe that most features have a positive correlation with values > 0.7. For the audio features most features have a complete overlap with all values being > 0.975. For the video features some features have a correlation value < 0.4 but a good proportion of features have a correlation value > 0.4. In summary, as the features are highly correlated, they can be reduced to create a smaller set of features that can still capture the variance in the data. 
 
+<p float="left">
+<img src="./Images/images/image7.png"/>
+
+<img src="./Images/images/image16.png"/>
+</p>
+
 ## Feature Reduction/Selection
 ### Most Drifted Features
 ### PCA
