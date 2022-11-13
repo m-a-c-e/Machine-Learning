@@ -179,7 +179,7 @@ For feature reduction/selection techniques we use the following techniques:
 ### Most Drifted Features
 We sort the mean_difference of all the features in a non-increasing order. We call this order the “most drifted features”. Then, we use 5-fold cross validation technique to determine the best top-k most drifted features that maximizes the f1-score on the test data.
 
-### PCA
+### Principle Component Analysis - PCA
 
 Using the Principle Component analysis technique to extract the top-100 principle components. From PCA we can observe that only one component contributes for more than 5% of explained variance and 8 features that capture more than 2% of the variance. Therefore, we can conclude that although features might be correlated there aren’t any particular components that capture most of the variance in the data. Also, the cumulative variance captured by the first 100 features = 77.134%. 
 
