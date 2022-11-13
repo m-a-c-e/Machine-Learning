@@ -129,10 +129,6 @@ Then we also plot a wordcloud visualization after properly lemmatising and remov
 
 After performing this text analysis, we have a strong idea that the data is coherent, sensible and well distributed.
 
-Audio and Video files can’t be analyzed directly without pre-processing. Therefore, we perform exploratory data analysis on the audio and video files after feature extraction. We also include the extracted text features in this process. 
-
-There are no missing values in the dataset. We use a min-max scaler to standardize the data so that all the values are between 0 and 1. We perform EDA on the scaled features.
-
 
 ### Correlation - Text, Audio, Video
 Analyzing the correlation matrix of the text features we can observe that most features have a positive correlation with values > 0.7. For the audio features most features have a complete overlap with all values being > 0.975. For the video features some features have a correlation value < 0.4 but a good proportion of features have a correlation value > 0.4. In summary, as the features are highly correlated, they can be reduced to create a smaller set of features that can still capture the variance in the data. 
