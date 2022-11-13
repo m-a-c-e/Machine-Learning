@@ -127,8 +127,28 @@ The visual features are extracted for each frame in the utterance video using a 
 Audio and Video files can’t be analyzed directly without pre-processing. Therefore, we perform exploratory data analysis on the audio and video files after feature extraction. We also include the extracted text features in this process. 
 
 **Handling Missing Values:** There are no missing values in the dataset. 
+
 **Normalizing the dataset:** We use a min-max scaler to standardize the data so that all the values are between 0 and 1. 
 We perform EDA on the scaled features. 
+
+This EDA was an attempt to understand how the textual portion of the dataset is distributed between sarcastic and non-sarcastic labels and identify any inherent patterns that can be exploited by our model. We begin by plotting the distribution statistics of the dataset- the division of sarcastic dialogues uttered based on shows, actors etc.
+
+<p float="left">
+<img src="./Images/images/image20.png"/>
+
+<img src="./Images/images/image6.png"/>
+</p>
+
+We determine the polarity of sarcastic and non sarcastic dialogues to see if there is some consistency in each group which is sensible.
+
+<p float="left">
+<img src="./Images/images/image18.png"/>
+
+</p>
+
+Then we also plot a wordcloud visualization after properly lemmatising and removing stop words to see what are some prominent words in each group to observe if these words are coherent and likely to make a sentence sound sarcastic. 
+
+
 
 ### Correlation - Text, Audio, Video
 Analyzing the correlation matrix of the text features we can observe that most features have a positive correlation with values > 0.7. For the audio features most features have a complete overlap with all values being > 0.975. For the video features some features have a correlation value < 0.4 but a good proportion of features have a correlation value > 0.4. In summary, as the features are highly correlated, they can be reduced to create a smaller set of features that can still capture the variance in the data. 
