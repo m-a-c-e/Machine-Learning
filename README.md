@@ -109,15 +109,24 @@ Our ideal goal would be to demonstrate how our multimodal approach outperforms u
 ## Feature Extraction
 ### Text
 Feature extraction on Text is done using BERT. The labels are numerically encoded and then the dialogues are passed first through NLTK’s pretrained Punkt sentence tokenizer which produces a numerically encoded vector of tokens based on the tokeniser’s vocabulary, special tokens such as [CLS] and [SEP] are added, and it is suitably padded. The corresponding attention mask is generated and given as input along with the numerically encoded vector to  Pytorch pretrained BERT model that creates the vector embedding. This output is obtained from the final layer using output_all_encoded_layer=True to get the output of all the 12 layers resulting in a vector of size 768.
-### Audio
-Feature extraction on Audio is done using the Librosa library. First, we use the vocal separation technique implemented in [1] to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as distinctness, frequency, and amplitude. For each audio file we extract 283 features. 
-### Video
-The video_file name is first mapped to its corresponding class label (0: non-sarcastic, 1: sarcastic) and are stored separately. The visual features are extracted for each frame in the utterance video using a pool5 layer of a ResNet-152 model that has been pre-trained on the ImageNet dataset. We first preprocess every frame by resizing, center-cropping and normalizing it. To obtain a visual representation of each video, we compute the mean of the obtained 2048 dimensional feature vector for every frame. We used the same averaging strategy as with the other modalities.
 
-## Exploratory Data Analysis
-### Text
 ### Audio
+Feature extraction on Audio is done using the Librosa library. First, we use the vocal separation technique implemented in [1] to extract the vocal component from the given audio file. This will ensure that any instruments or laugh tracks are removed. Then, we extract the Mel-frequency cepstral coefficients (MFCCs) and their delta, mel-scaled spectrogram and their delta and the spectral centroid of the extracted audio file. These components help in capturing audio features such as pitch, intonation, and other tonal-specific details of the speaker. We segment the audio into equal sized segments of size = 512, and we extract the above mentioned 283 features for each segment and compute the average across all segments. This serves as the feature representation of the audio file. 
+
 ### Video
+The visual features are extracted for each frame in the utterance video using a pool5 layer of a ResNet-152 model that has been pre-trained on the ImageNet dataset. Each frame of the video is first resized, and their center is cropped and the image is normalized. The processed video frame is input to the ResNet-152 model and the features are extracted. We perform the same operation for all the frames in the given video and average the features across all the frames. The resuling 2048 feature vector is the feature representation of the video file. 
+
+## Exploratory Data Analysis (EDA)
+### EDA - Text
+
+Audio and Video files can’t be analyzed directly without pre-processing. Therefore, we perform exploratory data analysis on the audio and video files after feature extraction. We also include the extracted text features in this process. 
+
+**Handling Missing Values:** There are no missing values in the dataset. 
+**Normalizing the dataset:** We use a min-max scaler to standardize the data so that all the values are between 0 and 1. 
+We perform EDA on the scaled features. 
+
+### Correlation - Text, Audio, Video
+Analyzing the correlation matrix of the text features we can observe that most features have a positive correlation with values > 0.7. For the audio features most features have a complete overlap with all values being > 0.975. For the video features some features have a correlation value < 0.4 but a good proportion of features have a correlation value > 0.4. In summary, as the features are highly correlated, they can be reduced to create a smaller set of features that can still capture the variance in the data. 
 
 ## Feature Reduction/Selection
 ### Most Drifted Features
