@@ -149,9 +149,9 @@ We determine the polarity of sarcastic and non sarcastic dialogues to see if the
 Then we also plot a wordcloud visualization after properly lemmatising and removing stop words to see what are some prominent words in each group to observe if these words are coherent and likely to make a sentence sound sarcastic. 
 
 <p float="left" align="center">
-<img src="./Images/images/image21.png"/>
+<img src="./Images/images/image21.png" width="500"/>
 
-<img src="./Images/images/image5.png"/>
+<img src="./Images/images/image5.png" width="500"/>
 </p>
 
 After performing this text analysis, we have a strong idea that the data is coherent, sensible and well distributed.
@@ -226,8 +226,10 @@ For the supervised models we use a Support Vector Machine for the binary classif
 
 <p float="left" align="center">
 <img src="./Images/images/image22.png"/>
-
+<img src="./Images/images/image9.png"/>
 </p>
+
+
 
 #### Gaussian Naive Bayes
 
@@ -235,30 +237,42 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 
 <p float="left" align="center">
 <img src="./Images/images/image2.png"/>
-
+<img src="./Images/images/image8.png"/>
 </p>
 
-### Unsupervised
-For Unsupervisd learning model, we decided to fit our data using a Gaussian Mixture Model individually to each type of feature (video, audio and text). Since the groud truth label for all samples is binary, that is, sarcastic or not sarcastic, the number of componenents for our GMM was set to 2. Next, the data was first separated in 9:1 ratio. The first split containing the 90 percent of data was then trained using kfold cross validation with number of splits set to 5. This helped us get the best model using all of the 90 percent of data split. This model was then evaluated against the 10 percent split to obtain the accuracy for a single iteration. Since the data split was random, the procedure was run for 10 iterations and the best model out of the 10 iterations was picked to get the final accuracy. The final accuracy after training Video, Audio and Text features separately, was as follows:
-<table>
-  <tr>
-    <th>Feature (dim)</th>
-    <th>Accuracy</th>
-  </tr>
-  <tr>
-    <td>Video (2048)</td>
-    <td>59</td>
-  </tr>
-  <tr>
-    <td>Audio (283)</td>
-    <td>58</td>
-  </tr>
-   <tr>
-    <td>Text (768)</td>
-    <td>55</td>
-  </tr>
-</table>
+Performance of SVM remains relatively constant compared to GNB as we increase the number of features. Also, the performance of SVM remains better than GNB. Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. Therefore, we can conclude that the most drifted feature selection performs better than PCA.  
 
 ## Results and Discussion
 
+| Features             	| Selection/Reduction  	| Model 	| Precision      	| Recall          	| Accuracy       	| F1-Score       	| ROC-AUC        	|
+|----------------------	|----------------------	|-------	|----------------	|-----------------	|----------------	|----------------	|----------------	|
+| Text                 	| MD                   	| GNB   	| 0.632 +- 0.077 	| 0.744 +- 0.0543 	| 0656 +- 0.052  	| 0.681 +- 0.059 	| 0.704 +- 0.065 	|
+|                      	|                      	| SVM   	| 0.624 +- 0.090 	| 0.721 +- 0.073  	| 0.642 +- 0.053 	| 0.665 +- 0.063 	| 0.609 +- 0.012 	|
+|                      	| PCA                  	| GNB   	| 0.583 +- 0.104 	| 0.595 +- 0.078  	| 0.581 +- 0.066 	| 0.584 +- 0.076 	| 0.621 +- 0.055 	|
+|                      	|                      	| SVM   	| 0.620 +- 0.089 	| 0.657 +- 0.085  	| 0.624 +- 0.060 	| 0.633 +- 0.067 	| 0.701 +- 0.058 	|
+| Audio                	| MD                   	| GNB   	| 0.793 +- 0.146 	| 0.176 +- 0.043  	| 0.562 +- 0.047 	| 0.284 +- 0.056 	| 0.588 +- 0.023 	|
+|                      	|                      	| SVM   	| 0.646 +- 0.086 	| 0.646 +- 0.043  	| 0.642 +- 0.044 	| 0.642 +- 0.044 	| 0.709 +- 0.052 	|
+|                      	| PCA                  	| GNB   	| 0.659 +- 0.196 	| 0.166 +- 0.057  	| 0.537 +- 0.053 	| 0.259 +- 0.077 	| 0.522 +- 0.054 	|
+|                      	|                      	| SVM   	| 0.663 +- 0.065 	| 0.715 +- 0.037  	| 0.673 +- 0.033 	| 0.685 +- 0.034 	| 0.740 +- 0.035 	|
+| Video                	| MD                   	| GNB   	| 0.665 +- 0.083 	| 0.743 +- 0.085  	| 0.684 +- 0.070 	| 0.699 +- 0.072 	| 0.761 +- 0.060 	|
+|                      	|                      	| SVM   	| 0.688 +- 0.056 	| 0.691 +- 0.064  	| 0.691 +- 0.039 	| 0.690 +- 0.049 	| 0.747 +- 0.057 	|
+|                      	| PCA                  	| GNB   	| 0.607 +- 0.084 	| 0.637 +- 0.077  	| 0.613 +- 0.055 	| 0.619 +- 0.070 	| 0.665 +- 0.064 	|
+|                      	|                      	| SVM   	| 0.672 +- 0.077 	| 0.602 +- 0.096  	| 0.654 +- 0.054 	| 0.630 +- 0.729 	| 0.724 +- 0.052 	|
+| Text + Audio + Video 	| MD                   	| GNB   	| 0.695 +- 0.094 	| 0.783 +- 0.074  	| 0.719 +- 0.071 	| 0.734 +- 0.075 	| 0.780 +- 0.063 	|
+|                      	|                      	| SVM   	| 0.725 +- 0.064 	| 0.763 +- 0.076  	| 0.738 +- 0.048 	| 0.741 +- 0.059 	| 0.802 +- 0.041 	|
+|                      	| PCA                  	| GNB   	| 0.655 +- 0.102 	| 0.652 +- 0.086  	| 0.655 +- 0.069 	| 0.650 +- 0.084 	| 0.715 +- 0.079 	|
+|                      	|                      	| SVM   	| 0.688 +- 0.097 	| 0.684 +- 0.076  	| 0.686 +- 0.070 	| 0.683 +- 0.076 	| 0.767 +- 0.064 	|
+
+
+So we can see that when we combine all three modalities the performance is highly improved compared to individual modalities which indicates that it is useful to follow a multimodal approach. 
+
+While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately.
+Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA.
+
+
 ## Future Directions
+
+Hyper parameter tuning for supervised models
+Unsupervised model implementations (GMM, KMeans)
+Explore other feature extraction techniques
+Evaluating the performance on external dataset
