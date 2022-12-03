@@ -225,7 +225,17 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 
 ### Gaussian Mixture Models
 
+<p float="left" align="center">
+<img src="./Images/images/un_md_gmm.png"/>
+<img src="./Images/images/un_pca_gmm.png"/>
+</p>
+
 ### K Means Clustering
+
+<p float="left" align="center">
+<img src="./Images/images/un_md_km.png"/>
+<img src="./Images/images/un_pca_km.png"/>
+</p>
 
 
 ## Results and Discussion
