@@ -221,6 +221,12 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 
 Performance of SVM remains relatively constant compared to GNB as we increase the number of features. Also, the performance of SVM remains better than GNB. Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. Therefore, we can conclude that the most drifted feature selection performs better than PCA.  
 
+### Random Forests
+<??>
+
+### XGBoost
+<??>
+
 ## Unsupervised Learning
 
 ### Gaussian Mixture Models
