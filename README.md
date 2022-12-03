@@ -221,7 +221,16 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 
 Performance of SVM remains relatively constant compared to GNB as we increase the number of features. Also, the performance of SVM remains better than GNB. Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. Therefore, we can conclude that the most drifted feature selection performs better than PCA.  
 
+## Unsupervised Learning
+
+### Gaussian Mixture Models
+
+### K Means Clustering
+
+
 ## Results and Discussion
+
+### Supervised Learning
 
 | Features             	| Selection/Reduction  	| Model 	| Precision      	| Recall          	| Accuracy       	| F1-Score       	| ROC-AUC        	|
 |----------------------	|----------------------	|-------	|----------------	|-----------------	|----------------	|----------------	|----------------	|
@@ -246,6 +255,16 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 **Comparing Modalities:** So we can see that when we combine all three modalities the performance is highly improved compared to individual modalities which indicates that it is useful to follow a multimodal approach. While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately.
 
 **Comparing Classified and feature reducion/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
+
+### Unsupervised Learning
+
+| Selection/Reduction  	| Model 	| Precision      	| Recall          	| F1- Score      	| NMI           	| Jaccard Coef    | Rand Stat       | FM Score        |
+|----------------------	|-------	|----------------	|-----------------	|----------------	|----------------	|----------------	|----------------	|----------------	|
+| MD                   	| GMM   	| 0.830 +- 0.047 	| 0.658 +- 0.058 	  | 0.673 +- 0.029 	| 0.115 +- 0.042 	| 0.412 +- 0.032 	| 0.565 +- 0.025 	| 0.584 +- 0.025 	|
+|                      	| KM    	| 0.840 +- 0.051 	| 0.672 +- 0.076  	| 0.690 +- 0.051 	| 0.139 +- 0.067 	| 0.431 +- 0.054 	| 0.582 +- 0.049 	| 0.601 +- 0.052 	|
+| PCA                  	| GMM   	| 0.701 +- 0.239 	| 0.606 +- 0.122  	| 0.522 +- 0.037 	| 0.024 +- 0.019 	| 0.398 +- 0.024 	| 0.504 +- 0.014 	| 0.575 +- 0.028 	|
+|                      	| KM    	| 0.613 +- 0.241 	| 0.585 +- 0.105  	| 0.540 +- 0.052 	| 0.022 +- 0.017 	| 0.381 +- 0.022 	| 0.507 +- 0.019 	| 0.554 +- 0.024 	|
+
 
 
 ## Future Directions
