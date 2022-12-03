@@ -250,7 +250,7 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 
 | Features             	| Selection/Reduction  	| Model 	| Precision      	| Recall          	| Accuracy       	| F1-Score       	| ROC-AUC        	|
 |----------------------	|----------------------	|-------	|----------------	|-----------------	|----------------	|----------------	|----------------	|
-| Text                 	| MD                   	| GNB   	| 0.632 +- 0.077 	| 0.744 +- 0.0543 	| 0656 +- 0.052  	| 0.681 +- 0.059 	| 0.704 +- 0.065 	|
+| Text                 	| MD                   	| GNB   	| 0.632 +- 0.077 	| 0.744 +- 0.0543 	| 0.656 +- 0.052  	| 0.681 +- 0.059 	| 0.704 +- 0.065 	|
 |                      	|                      	| SVM   	| 0.624 +- 0.090 	| 0.721 +- 0.073  	| 0.642 +- 0.053 	| 0.665 +- 0.063 	| 0.609 +- 0.012 	|
 |                      	| PCA                  	| GNB   	| 0.583 +- 0.104 	| 0.595 +- 0.078  	| 0.581 +- 0.066 	| 0.584 +- 0.076 	| 0.621 +- 0.055 	|
 |                      	|                      	| SVM   	| 0.620 +- 0.089 	| 0.657 +- 0.085  	| 0.624 +- 0.060 	| 0.633 +- 0.067 	| 0.701 +- 0.058 	|
@@ -274,7 +274,7 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 
 ### Unsupervised Learning
 
-| Selection/Reduction  	| Model 	| Precision      	| Recall          	| F1- Score      	| NMI           	| Jaccard Coef    | Rand Stat       | FM Score        |
+| Selection/Reduction  	| Model 	| Precision      	| Recall          	| F-Measure      	| NMI           	| Jaccard Coef    | Rand Stat       | FM Measure      |
 |----------------------	|-------	|----------------	|-----------------	|----------------	|----------------	|----------------	|----------------	|----------------	|
 | MD                   	| GMM   	| 0.830 +- 0.047 	| 0.658 +- 0.058 	  | 0.673 +- 0.029 	| 0.115 +- 0.042 	| 0.412 +- 0.032 	| 0.565 +- 0.025 	| 0.584 +- 0.025 	|
 |                      	| KM    	| 0.840 +- 0.051 	| 0.672 +- 0.076  	| 0.690 +- 0.051 	| 0.139 +- 0.067 	| 0.431 +- 0.054 	| 0.582 +- 0.049 	| 0.601 +- 0.052 	|
