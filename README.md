@@ -247,7 +247,7 @@ Along with GMM, we also analyze the performance of the K Means Clustering algori
 
 ## Results and Discussion
 
-### Modality Comparison:
+### Modality Comparison
 
 <p float="left" align="center">
 <img src="./Images/images/modality_comparison.png"/>
@@ -255,6 +255,13 @@ Along with GMM, we also analyze the performance of the K Means Clustering algori
 
 In the above figure, we compare the performance of the SVM using the MD feature selection technique on individual modalities namely: text, audio, video and the combined modality (Text + Audio + Video). While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately. (?? Too generic ??). We can observe the behaviour from the above figure, where the combined modalities clearly outperform the individual modalities across all the metric. **Therefore, having multiple modalities can help extract more meaningful features that can in turn help capture the relations and hence achieve superior performance.**
 
+### Feature Selection/Reduction Comparison
+
+<p float="left" align="center">
+<img src="./Images/images/fs_comparison.png"/>
+</p>
+
+In the above figure, we compare the performance metrics (accuracy, f1-score, and roc-auc) across all the supervised learning models for the two feature reduction techniques analyzed in this project. 
 
 ### Supervised Learning
 
