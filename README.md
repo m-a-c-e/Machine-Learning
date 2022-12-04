@@ -233,22 +233,42 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 
 ### Deep Neural Networks
 
-For Deep Learning methods, we use a Multi Layer Perceptron for this binary classification problem. First we developed a model for the individual modalities and then a separate model for the three modalities (audio, video, text) together. The model architectures are shown below.
+For Deep Learning methods, we use a Neural Network for this binary classification problem. First we developed a model for the individual modalities and then a separate model for the three modalities (audio, video, text) together. The model architectures are shown below.
+
 
 <p float="left" align="center">
+<figcaption align="middle">Audio Processing Model Architecture</figcaption>
 <img src="./Images/images/audio.png"/>
-
+<figcaption align="middle">Video Processing Model Architecture</figcaption>
 <img src="./Images/images/video.png"/>
 
 </p>
 <p float="left" align="center">
+<figcaption align="middle">Text Processing Model Architecture</figcaption>
   <img src="./Images/images/text_model.png"/>
+  <figcaption align="middle">Combined Model Architecture</figcaption>
 <img src="./Images/images/combined.png"/>
 
 </p>
                                          
 The models were trained using Adam Optimizer and the loss function Binary Cross Entropy. 
-Though the Neural Network can understand complex patterns, because of the lesser number of datapoints it was overfitting the dataset. Hence we simplified the model architecture and used techniques like regularization techniques to improve the performance. Even then, the model's performance was poorer than SVMs.                                       
+Though the Neural Network can understand complex patterns, because of the lesser number of datapoints it was overfitting the dataset. Hence we simplified the model architecture and used techniques like regularization techniques to improve the performance. Even then, the model's performance was poorer than SVMs.                            
+
+<figcaption align="middle">Audio and Video Model Training</figcaption>
+<p float="left" align="center">
+<img src="./Images/images/aud_hist.png"/>
+
+<img src="./Images/images/vid_model_hist.png"/>
+</p>
+
+<figcaption align="middle">Text and Combined-Modalities Model Training</figcaption>
+<p float="left" align="center">
+<img src="./Images/images/text_hist.png"/>
+
+<img src="./Images/images/combined_hist.png"/>
+</p>
+
+
 
 
 ## Unsupervised/Semisupervised Learning
