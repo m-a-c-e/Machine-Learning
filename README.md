@@ -356,7 +356,7 @@ In the above figure, we compare the performance metrics (accuracy, f1-score, and
 
 **NOTE: The hyperparameters used in our models were tuned using grid search cross validation**
 
-**Comparing Classifier and feature reduction/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
+**Comparing Classifier and feature reduction/selection:** Overall, the performance of the Support vector machine classifier is the best, followed by Random Forest, Gaussian Naive Bayes and XGBoost.  As analysed previously, the performance is superior when we select the Most Drifted features than when we select features using PCA. The ROC score seems to be the best estimate of the model’s performance. The reason for SVM’s superiority it considers the features and the interactions between them while random forest chooses features at random for each split, Gaussian naive Bayes considers features to be independent. SVM is also better suited for binary classification while XGBoost and Random Forest intrinsically suits multiclass classification better. SVM also handles the overfitting problem better than XGBoost and Random Forest hence achieving best results on the test set.
 
 ### Unsupervised/Semisupervised Learning
 
