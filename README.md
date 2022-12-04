@@ -208,7 +208,7 @@ For the supervised models we use a Support Vector Machine for the binary classif
 
 ### Gaussian Naive Bayes
 
-Along with SVM, we also use Gaussian NB to compare our results. GNB is a relatively simple model compared to SVM and can be trained quickly. In contrast to SVMs, the performance of GNB reduces with the increase in features as they can't handle high dimensional data. The drop in performance in observed across both the feature selection/reduction techniques. Also, the performance of GNB remains poorer compared the SVMs. **Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. Therefore, we can conclude that the most drifted feature selection performs better than PCA.**  
+Along with SVM, we also use Gaussian NB to compare our results. GNB is a relatively simple model compared to SVM and can be trained quickly. In contrast to SVMs, the performance of GNB reduces with the increase in features as they can't handle high dimensional data. The drop in performance in observed across both the feature selection/reduction techniques. Also, the performance of GNB remains poorer compared the SVMs. **Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. **  
 
 <p float="left" align="center">
 <img src="./Images/images/image2.png"/>
@@ -218,6 +218,7 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 
 ### Random Forests
 
+Due to the random nature of split in the random forest classifier, it is hard for the model to fit all the uncorrelated features so the model performs poorly compared to SVM and GNB. It is also observed that the accuracy(all metrics) of max drifted features is higher than the features from PCA.
 
 <p float="left" align="center">
 <img src="./Images/images/rf-pca.jpg"/>
@@ -225,6 +226,8 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 </p>
 
 ### XGBoost
+
+The XG Boost classifier is a modified random classifier model. XGBoost straight away prunes the tree with a score called “Similarity score” before entering into the actual modeling purposes. It considers the difference between the similarity score of the node and the similarity score of the children. If the gain from a node is found to be minimal then it just stops constructing the tree to a greater depth which can overcome the challenge of overfitting to a great extend. Meanwhile, the Random forest might probably overfit the data if the majority of the trees in the forest are provided with similar samples. Hence, the XG boost model performs better than random forest. We can also conclude here that the most drifted feature selection performs better than PCA.
 
 <p float="left" align="center">
 <img src="./Images/images/xgb-pca.jpg"/>
@@ -351,7 +354,9 @@ In the above figure, we compare the performance metrics (accuracy, f1-score, and
 <img src="./Images/images/supervised_comparison.png"/>
 </p>
 
-**Comparing Classifier and feature reducion/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
+**NOTE: The hyperparameters used in our models were tuned using grid search cross validation**
+
+**Comparing Classifier and feature reduction/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
 
 ### Unsupervised/Semisupervised Learning
 
@@ -366,6 +371,8 @@ In the above figure, we compare the performance metrics (accuracy, f1-score, and
 <p float="left" align="center">
 <img src="./Images/images/unsupervised_comparison.png"/>
 </p>
+
+**NOTE: The hyperparameters used in our models were tuned using grid search cross validation**
 
 **Comparing Classifier and feature reduction/selection:** Overall, the performance of the K Means Clustering is slightly better than that of Gaussian Mixxture Model. Using the most drifted feature selection technique yields better results than PCA, because of its access to class labels. For the same feature selection/reduction technique most of the performance metrics (except precision and recall) is similar for both K Means and GMM. However, their overall performance when compared to the supervised learning models is poor. Supervised learning models achieve a much better F1-score, but the unsupervised/semisupervised models achieve a higher precision but at the cost of recall. Other metrics such as normalized mutual information, jaccard coeffient, rand statistic and folkes-mallow measure help us conclude that although the K Means and GMM models are able to successfully find the clusters/components and perform better than random guesses, but the quality of the clusters/components is not great (above the baselines but lesser than the supervised models). 
 
