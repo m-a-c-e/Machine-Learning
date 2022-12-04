@@ -218,16 +218,17 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 
 ### Random Forests
 
+
 <p float="left" align="center">
-<img src="./Images/images/rf-pca.jpg"/ width=500 overflow='hidden'>
-<img src="./Images/images/rf-topd.jpg"/ width=500 overflow='hidden'>
+<img src="./Images/images/rf-pca.jpg"/>
+<img src="./Images/images/rf-topd.jpg"/>
 </p>
 
 ### XGBoost
 
 <p float="left" align="center">
-<img src="./Images/images/xgb-pca.jpg"/ width=500>
-<img src="./Images/images/xgb-topd.jpg"/ width=500>
+<img src="./Images/images/xgb-pca.jpg"/>
+<img src="./Images/images/xgb-topd.jpg"/>
 </p>
 
 ### Deep Neural Networks
