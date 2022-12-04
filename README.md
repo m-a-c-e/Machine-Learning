@@ -222,6 +222,26 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 ### XGBoost
 <??>
 
+### Deep Neural Networks
+
+For Deep Learning methods, we use a Multi Layer Perceptron for this binary classification problem. First we developed a model for the individual modalities and then a separate model for the three modalities (audio, video, text) together. The model architectures are shown below.
+
+<p float="left" align="center">
+<img src="./Images/images/audio.png"/>
+
+<img src="./Images/images/video.png"/>
+
+</p>
+<p float="left" align="center">
+  <img src="./Images/images/text_model.png"/>
+<img src="./Images/images/combined.png"/>
+
+</p>
+                                         
+The models were trained using Adam Optimizer and the loss function Binary Cross Entropy. 
+Though the Neural Network can understand complex patterns, because of the lesser number of datapoints it was overfitting the dataset. Hence we simplified the model architecture and used techniques like regularization techniques to improve the performance. Even then, the model's performance was poorer than SVMs.                                       
+
+
 ## Unsupervised/Semisupervised Learning
 
 ### Gaussian Mixture Models
