@@ -375,14 +375,14 @@ Overall, the performance of the Support vector machine classifier is the best, f
 **NOTE: The hyperparameters used in our models were tuned using grid search cross validation**
 
 Overall, the performance of the K Means Clustering is slightly better than that of Gaussian Mixxture Model. Using the most drifted feature selection technique yields better results than PCA, because of its access to class labels. For the same feature selection/reduction technique most of the performance metrics (except precision and recall) is similar for both K Means and GMM. However, their overall performance when compared to the supervised learning models is poor. Supervised learning models achieve a much better F1-score, but the unsupervised/semisupervised models achieve a higher precision but at the cost of recall. Other metrics such as normalized mutual information, jaccard coeffient, rand statistic and folkes-mallow measure help us conclude that although the K Means and GMM models are able to successfully find the clusters/components and perform better than random guesses, but the quality of the clusters/components is not great (above the baselines but lesser than the supervised models). 
-
+<!-- 
 ## Future Directions
 
 * Hyper parameter tuning for supervised models
 * Unsupervised model implementations (GMM, KMeans)
 * Explore other feature extraction techniques
 * Evaluating the performance on external dataset
-
+ -->
 
 ### References:
 <a href="https://aclanthology.org/P15-2124.pdf">[1]</a> Joshi, Aditya, Vinita Sharma, and Pushpak Bhattacharyya. "Harnessing context incongruity for sarcasm detection." Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 2: Short Papers). 2015. <br>
