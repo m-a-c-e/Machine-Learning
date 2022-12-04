@@ -246,6 +246,15 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 
 ## Results and Discussion
 
+### Modality Comparison:
+
+<p float="left" align="center">
+<img src="./Images/images/modality_comparison.png"/>
+</p>
+
+**Comparing Modalities:** So we can see that when we combine all three modalities the performance is highly improved compared to individual modalities which indicates that it is useful to follow a multimodal approach. While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately.
+
+
 ### Supervised Learning
 
 | Features             	| Selection/Reduction  	| Model 	| Precision      	| Recall          	| Accuracy       	| F1-Score       	| ROC-AUC        	|
@@ -267,8 +276,9 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 |                      	| PCA                  	| GNB   	| 0.655 +- 0.102 	| 0.652 +- 0.086  	| 0.655 +- 0.069 	| 0.650 +- 0.084 	| 0.715 +- 0.079 	|
 |                      	|                      	| SVM   	| 0.688 +- 0.097 	| 0.684 +- 0.076  	| 0.686 +- 0.070 	| 0.683 +- 0.076 	| 0.767 +- 0.064 	|
 
-
-**Comparing Modalities:** So we can see that when we combine all three modalities the performance is highly improved compared to individual modalities which indicates that it is useful to follow a multimodal approach. While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately.
+<p float="left" align="center">
+<img src="./Images/images/supervised_comparison.png"/>
+</p>
 
 **Comparing Classified and feature reducion/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
 
@@ -282,6 +292,9 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 |                      	| KM    	| 0.613 +- 0.241 	| 0.585 +- 0.105  	| 0.540 +- 0.052 	| 0.022 +- 0.017 	| 0.381 +- 0.022 	| 0.507 +- 0.019 	| 0.554 +- 0.024 	|
 
 
+<p float="left" align="center">
+<img src="./Images/images/unsupervised_comparison.png"/>
+</p>
 
 ## Future Directions
 
