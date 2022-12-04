@@ -197,9 +197,7 @@ Using the Principle Component analysis technique to extract the top-100 principl
 ## Supervised Learning Methods
 ### Support Vector Machine
 
-For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We run 10-fold cross validation to determine the best feature reduction/selection technique. 
-
-*Note that here we don’t perform hyper parameter tuning for the SVM classifier. This will be explored later. 
+For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We use the "rbf" kernel in our SVM implementation. We run 10-fold cross validation to determine the best feature reduction/selection technique. We observe that the performance of SVM remains almost constant even with the increase in the number of features (after the initial increase). Even when we use all the 2000 features the performance of the model only reduces by around 2% from the highest performance. Especailly in PCA, after the initial improvement in performance the performance completely saturates. This clearly shows the ability of SVMs to handle high dimensional data efficiently. 
 
 <p float="left" align="center">
 <img src="./Images/images/image22.png"/>
@@ -227,9 +225,11 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 ### XGBoost
 <??>
 
-## Unsupervised Learning
+## Unsupervised/Semisupervised Learning
 
 ### Gaussian Mixture Models
+
+For the unsupervised learning models, we use the Gausian Mixture Model with number of components as 2 (binary classification), "full" covariance matrix and using "kmeans" to initialize the parameters of the model. We observe that performance of the GMM model increases initially with increase in the number of features while using the most drifted feature selection technique, but the performance drops and saturates with high number of features. In contrast, while using PCA, the model's performance does not increase. We conlcude that GMM models perform poorly when the number of features are very high but can perform well for lesser number of features. 
 
 <p float="left" align="center">
 <img src="./Images/images/un_md_gmm.png"/>
@@ -238,11 +238,15 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 
 ### K Means Clustering
 
+
+Along with GMM, we also analyze the performance of the K Means Clustering algorithm. Similar to GMM, we set the number of clusters to 2 because of the binary classification task, and use "kmeans++" to initialize the cluster centroids. Comapred to GMM, K Means is able to achieve better performance with the most drifted feature selection algorithm. However, while using PCA, the performance remains similar to GMM. Hence, we can conlude that PCA does not work well for this problem. Although the PCA components capture the most variance in the data, the data labels (or classes) are not acccounted for in that process. However, the most drifted features account for the drifts in feature based on the class labels. 
+
 <p float="left" align="center">
 <img src="./Images/images/un_md_km.png"/>
 <img src="./Images/images/un_pca_km.png"/>
 </p>
 
+**Note:** As we use class labels for finding the most drifted features, the GMM/KMeans with most drifted feature is semi-supervised and not unsupervised. However, using PCA with GMM/KMeans is unsupervised. 
 
 ## Results and Discussion
 
@@ -252,7 +256,7 @@ Performance of SVM remains relatively constant compared to GNB as we increase th
 <img src="./Images/images/modality_comparison.png"/>
 </p>
 
-In the above figure, we compare the performance of the SVM using the MD feature selection technique on individual modalities namely: text, audio, video and the combined modality (Text + Audio + Video). While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately. (?? Too generic ??). We can observe the behaviour from the above figure, where the combined modalities clearly outperform the individual modalities across all the metric. **Therefore, having multiple modalities can help extract more meaningful features that can in turn help capture the relations and hence achieve superior performance. **
+In the above figure, we compare the performance of the SVM using the MD feature selection technique on individual modalities namely: text, audio, video and the combined modality (Text + Audio + Video). While comparing individual modality performance, video is superior, followed by audio and then text. Upon investigation, it was understood that the visual model provides more contextual cues than the textual or audio model when it comes to utterances.  Audio along with its features on pitch and power of the vocal tract provides more information than text. Text provides the least contextual clues for the classifier to detect sarcasm accurately. (?? Too generic ??). We can observe the behaviour from the above figure, where the combined modalities clearly outperform the individual modalities across all the metric. **Therefore, having multiple modalities can help extract more meaningful features that can in turn help capture the relations and hence achieve superior performance.**
 
 
 ### Supervised Learning
