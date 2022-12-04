@@ -197,27 +197,24 @@ Using the Principle Component analysis technique to extract the top-100 principl
 ## Supervised Learning Methods
 ### Support Vector Machine
 
-For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We use the "rbf" kernel in our SVM implementation. We run 10-fold cross validation to determine the best feature reduction/selection technique. We observe that the performance of SVM remains almost constant even with the increase in the number of features (after the initial increase). Even when we use all the 2000 features the performance of the model only reduces by around 2% from the highest performance. Especailly in PCA, after the initial improvement in performance the performance completely saturates. This clearly shows the ability of SVMs to handle high dimensional data efficiently. 
+For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We use the "rbf" kernel in our SVM implementation. We run 10-fold cross validation to determine the best feature reduction/selection technique. We observe that the performance of SVM remains almost constant even with the increase in the number of features (after the initial increase). **Even when we use all the 2000 features the performance of the model only reduces by around 2% from the highest performance.** Especailly in PCA, after the initial improvement in performance the performance completely saturates. This clearly shows the ability of SVMs to handle high dimensional data efficiently. 
 
 <p float="left" align="center">
 <img src="./Images/images/image22.png"/>
 <img src="./Images/images/image9.png"/>
 </p>
 
-<sub>Note: Red denotes the actual values. Blue denotes the mean values</sub>
+<sub>Note: Red denotes the actual values. Blue denotes the mean values [Applies to all plots]</sub>
 
 ### Gaussian Naive Bayes
 
-Along with SVM, we also use Gaussian NB to compare our results. GNB is a relatively simple model compared to SVM and can be trained quickly.
+Along with SVM, we also use Gaussian NB to compare our results. GNB is a relatively simple model compared to SVM and can be trained quickly. In contrast to SVMs, the performance of GNB reduces with the increase in features as they can't handle high dimensional data. The drop in performance in observed across both the feature selection/reduction techniques. Also, the performance of GNB remains poorer compared the SVMs. **Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. Therefore, we can conclude that the most drifted feature selection performs better than PCA.**  
 
 <p float="left" align="center">
 <img src="./Images/images/image2.png"/>
 <img src="./Images/images/image8.png"/>
 </p>
 
-<sub>Note: Red denotes the actual values. Blue denotes the mean values</sub>
-
-Performance of SVM remains relatively constant compared to GNB as we increase the number of features. Also, the performance of SVM remains better than GNB. Moreover, compared to top-k drifted features, PCA performs poorly across both GNB and SVM, in all metrics. Therefore, we can conclude that the most drifted feature selection performs better than PCA.  
 
 ### Random Forests
 <??>
@@ -284,9 +281,9 @@ In the above figure, we compare the performance of the SVM using the MD feature 
 <img src="./Images/images/supervised_comparison.png"/>
 </p>
 
-**Comparing Classified and feature reducion/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
+**Comparing Classifier and feature reducion/selection:** Overall, the performance of the Support vector machine classifier is better than that of Gaussian Naive Bayes. The performance is superior when we select the Most Drifted features than when we select features using PCA. The GNB model using the most drifted feature selection technique on the audio features achieves the best Precision score, but note that the corresponding recall and the overall Accuracy/ROC-AUC Score is very poor (most of the sarcastic data points are misclassifed). 
 
-### Unsupervised Learning
+### Unsupervised/Semisupervised Learning
 
 | Selection/Reduction  	| Model 	| Precision      	| Recall          	| F-Measure      	| NMI           	| Jaccard Coef    | Rand Stat       | FM Measure      |
 |----------------------	|-------	|----------------	|-----------------	|----------------	|----------------	|----------------	|----------------	|----------------	|
@@ -299,6 +296,8 @@ In the above figure, we compare the performance of the SVM using the MD feature 
 <p float="left" align="center">
 <img src="./Images/images/unsupervised_comparison.png"/>
 </p>
+
+**Comparing Classifier and feature reducion/selection:** Overall, the performance of the K Means Clustering is slightly better than that of Gaussian Mixxture Model. Using the most drifted feature selection technique yields better results than PCA, because of its access to class labels. For the same feature selection/reduction technique most of the performance metrics (except precision and recall) is similar for both K Means and GMM. However, their overall performance when compared to the supervised learning models is poor. Supervised learning models achieve a much better F1-score, but the unsupervised/semisupervised models achieve a higher precision but at the cost of accuracy. Other metrics such as normalized mutual information, jaccard coeffient, rand statistic and folkes-mallow measure help us conclude that although the K Means and GMM models are able to successfully find the clusters and perform better than random guesses, the quality of the 
 
 ## Future Directions
 
