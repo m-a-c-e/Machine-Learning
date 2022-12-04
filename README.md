@@ -261,7 +261,7 @@ In the above figure, we compare the performance of the SVM using the MD feature 
 <img src="./Images/images/fs_comparison.png"/>
 </p>
 
-In the above figure, we compare the performance metrics (accuracy, f1-score, and roc-auc) across all the supervised learning models for the two feature reduction techniques analyzed in this project. 
+In the above figure, we compare the performance metrics (accuracy, f1-score, and roc-auc) across all the supervised learning models for the two feature reduction techniques analyzed in this project. We observe that the most drifted feature selectino technique outperforms PCA across all the models. As the most drifted feature selection algorithm computes the drift using the class labels, it is able to choose feature more relevant to the given task. However, as PCA focuses on maximizing the variance captured and does not account for the class labels, it does not choose the most task-relevant features. Hence, for this task MD performs better than PCA. 
 
 ### Supervised Learning
 
