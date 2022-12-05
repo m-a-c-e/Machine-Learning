@@ -218,7 +218,7 @@ Along with SVM, we also use Gaussian NB to compare our results. GNB is a relativ
 
 ### Random Forests
 
-Due to the random nature of split in the random forest classifier, it is hard for the model to fit all the uncorrelated features so the model performs poorly compared to SVM and GNB. It is also observed that the accuracy(all metrics) of max drifted features is higher than the features from PCA.
+Random Forests models usually can handle more complex relations and therefore achieve better performances. However, due to the small size of our data set and high dimensional features, the random forests model overfits on the dataset despite parameter tuning and hence its performance on the test set is poor. Suprisingly, the performance is worse then both SVM and GNB. We believe that by collecting more data, the performance of the RF models can be improved. Moreover, the model fitting technique still outperforms PCA across all metrics despite the poor performance. 
 
 <p float="left" align="center">
 <img src="./Images/images/rf-pca.jpg"/>
