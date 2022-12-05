@@ -185,9 +185,9 @@ For feature reduction/selection techniques we use the following techniques:
 ### Most Drifted Features
 We sort the mean_difference of all the features in a non-increasing order. We call this order the “most drifted features”. Then, we use 10-fold cross validation technique to determine the best top-k most drifted features that maximizes the f1-score on the test data.
 
-### Principle Component Analysis - PCA
+### Principal Component Analysis - PCA
 
-Using the Principle Component analysis technique to extract the top-100 principle components. From PCA we can observe that only one component contributes for more than 5% of explained variance and 8 features that capture more than 2% of the variance. Therefore, we can conclude that although features might be correlated there aren’t any particular components that capture most of the variance in the data. Also, the cumulative variance captured by the first 100 features = 77.134%. 
+Using the Principal Component analysis technique to extract the top-100 principal components. From PCA we can observe that only one component contributes for more than 5% of explained variance and 8 features that capture more than 2% of the variance. Therefore, we can conclude that although features might be correlated there aren’t any particular components that capture most of the variance in the data. Also, the cumulative variance captured by the first 100 features = 77.134%. 
 
 <p float="left" align="center">
 <img src="./Images/images/image23.png" width="650"/>
@@ -197,7 +197,7 @@ Using the Principle Component analysis technique to extract the top-100 principl
 ## Supervised Learning Methods
 ### Support Vector Machine
 
-For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We use the "rbf" kernel in our SVM implementation. We run 10-fold cross validation to determine the best feature reduction/selection technique. We observe that the performance of SVM remains almost constant even with the increase in the number of features (after the initial increase). **Even when we use all the 2000 features the performance of the model only reduces by around 2% from the highest performance.** Especailly in PCA, after the initial improvement in performance the performance completely saturates. This clearly shows the ability of SVMs to handle high dimensional data efficiently. 
+For the supervised models we use a Support Vector Machine for the binary classification problem. As the number of features in our dataset is high compared to the number of data points, we use SVMs which are capable of handling high dimensional feature space. We use the "rbf" kernel in our SVM implementation. We run 10-fold cross validation to determine the best feature reduction/selection technique. We observe that the performance of SVM remains almost constant even with the increase in the number of features (after the initial increase). **Even when we use all the 2000 features the performance of the model only reduces by around 2% from the highest performance.** Especially in PCA, after the initial improvement in performance the performance completely saturates. This clearly shows the ability of SVMs to handle high dimensional data efficiently. 
 
 <p float="left" align="center">
 <img src="./Images/images/image22.png"/>
