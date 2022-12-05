@@ -398,11 +398,11 @@ Overall, the performance of the K Means Clustering is slightly better than that 
 
 | Name                              	| Contribution                                              	|
 |-----------------------------------	|-----------------------------------------------------------	|
-| Aparna Shree Sivanandam           	| Text preprocessing, EDA, Feature reduction                	|
-| Ishwarya Sivakumar                	| Video preprocessing and EDA                               	|
-| Manan Patel                       	| Audio EDA and Supervised method                           	|
-| Sai Prasath                       	| Audio preprocessing, Feature reduction, Supervised method 	|
-| Santosh Sinduja Sankara Narayanan 	| Video preprocessing and EDA                               	|
+| Aparna Shree Sivanandam           	| Text preprocessing, EDA, Feature reduction, GNB, SVM                	|
+| Ishwarya Sivakumar                	| Video preprocessing, EDA, Neural Networks                               	|
+| Manan Patel                       	| Video EDA                            	|
+| Sai Prasath                       	| Audio preprocessing, Feature reduction, GMM, KMeans 	|
+| Santosh Sinduja Sankara Narayanan 	| Video preprocessing, EDA, RF, XGBoost                               	|
 </p>
 <!--
 ### Team Member Contributions:
